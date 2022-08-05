@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="isShow = !isShow">显示/隐藏</button>
-        <transition>
+        <transition name="hello">
             <h1 v-show="isShow">你好啊! </h1>    
         </transition>
     </div>
@@ -25,11 +25,11 @@
     	background-color:orange;
     }
     
-    .v-enter-active{
+    .hello-enter-active{
     	animation:donghuaming 1s;
     }
     
-    .v-leave-active{ 
+    .hello-leave-active{ 
       /* 反转 */
     	animation:donghuaming 1s reverse;
      
