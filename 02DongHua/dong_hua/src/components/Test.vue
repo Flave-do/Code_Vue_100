@@ -24,24 +24,4 @@
     h1{
     	background-color:orange;
     }
-    
-    .hello-enter-active{
-    	animation:donghuaming 1s;
-    }
-    
-    .hello-leave-active{ 
-      /* 反转 */
-    	animation:donghuaming 1s reverse;
-     
-    }
-    
-    @keyframes donghuaming{
-		from{
-			transform:translateX(-100%);
-		}
-		
-		to{
-			transform:translateX(0px);
-		}
-	}
  </style>
