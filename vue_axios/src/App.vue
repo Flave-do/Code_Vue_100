@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <button @click="getStudents">获取学生信息</button>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    import axios from 'axios'
+    export default{
+      name: 'App',
+      methods:{
+          getStudents(){
+              //没有设置服务器先就这样意思意思
+              axios.get('localhost:8080/api1/student').then( 
+                response => {
+                  console.log('求成功了', response.data)
+                },
+          
+                error => {
+                  console.log('求失',error.message)
+                },
+              )
+          }
+      }
+    }
+            
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
