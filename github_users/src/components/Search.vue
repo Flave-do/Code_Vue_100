@@ -20,10 +20,12 @@
         },
         methods:{
             searchUsers(){
+                //请求前更新List的数据
+                this.$bus.$emit('updateListData',false,true,'',[])
                 axios.get(`https://api.github.com/search/users?q=${this.keyWord}`).then(
                     response => {
                         console.log('请求成功了')
-                        this.$bus.$emit('getUsers',response.data.items)
+                        this.$bus.$emit('updatelistData', false, false, '',response.data.items)
                     },
                     error => {
                         console.log('请求失败了',error.message)
