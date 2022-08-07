@@ -39,9 +39,15 @@
         name: ' List',
         data(){
             return{
-
+                users:[]
             }
         },
+        mounted(){
+            this.$bus.$on('getUsers',(users)=>{
+                console,console.log('我是list组件，收到了数据：',users);
+                this.users = users
+            })
+        }
     }
 </script>
             
