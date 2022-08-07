@@ -1,10 +1,7 @@
 <template>
-  <div id="app">
-
-    <div class="container">
-      <Search/>
-      <List/>
-    </div>
+  <div class="container">
+    <Search/>
+    <List/>
   </div>
 </template>
 
