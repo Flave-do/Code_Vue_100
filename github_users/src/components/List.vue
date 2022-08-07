@@ -33,7 +33,7 @@
         },
         mounted(){
             this.$bus.$on('updatelistData',(dataObj)=>{
-                this.info = dataObj
+                this.info = {...this.info,...dataObj}
             })
         }
     }
