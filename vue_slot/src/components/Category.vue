@@ -2,7 +2,8 @@
     <div class="category">
         <h3>{{title}}分类</h3>
         <!-- 定义一个插槽 -->
-        <slot>我是一个默认值，当使用者没有传递时展示</slot>
+        <slot name="center">我是一个默认值，当使用者没有传递时展示</slot>
+        <slot name="footer">我是一个默认值，当使用者没有传递时展示</slot>
     </div>
 </template>
 <script>
