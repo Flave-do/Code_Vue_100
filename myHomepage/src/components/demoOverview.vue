@@ -19,6 +19,7 @@
             </div>
             <div id="content-footer"></div> <!-- Content Footer -->
         </div>
+
         <!-- Social Media -->
         <div id="socmed">
             <ul id="socmed-list">
@@ -42,6 +43,7 @@ export default {
     },
    data() {
        return {
+        
        }
    },
 }
