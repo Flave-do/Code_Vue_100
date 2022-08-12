@@ -3,14 +3,11 @@
     <div id="header">
         <div id="header-inner" class="inner">
             <ul id="menu">
-                    <li class="menu-list"
-                        v-for="(mu,mid) in menuList" 
-                        :key="mid"
-                    >
+                    <li class="menu-list" v-for="(mu,mid) in menuList" :key="mid">
                         <div :id="mu.classList" 
-                            class="menu-active menu-icon"
+                            class="menu-icon"
+                            :class='mid == TAG ?"menu-active":true'
                         >
-                            {{mu.title}}
                         </div>
                         <a href="#" class="menu-hover">
                             {{mu.title}}
@@ -143,11 +140,6 @@ div#menu-portfolio.menu-active {
 div#menu-contact.menu-active {
     background-position: -400px bottom;
 }
-
-.conceal{
-    display: none;
-}
-
 
 /* .bar-enter-active,
 .bar-leave-active{
