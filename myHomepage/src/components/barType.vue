@@ -4,9 +4,7 @@
         <div id="menu-slider-container">
             <div class="slider-bg bg-black"></div> <!-- Slider Background -->
             <div id="menu-slider-bar" class="slider-bar color-bar animate-bar" :style="barStyle"></div> <!-- Slider Bar -->
-            <transition name="pointer" :appear="true">
                 <div id="menu-slider-pointer" class="slider-pointer color-pointer" :style="pointStyle"></div> <!-- Slider Pointer -->
-            </transition>
         </div>
         <button @click="add">按我右移</button>
         <button @click="loo">按我左移</button>

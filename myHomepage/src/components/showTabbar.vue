@@ -3,23 +3,19 @@
     <div id="header">
         <div id="header-inner" class="inner">
             <ul id="menu">
-                <li class="menu-list"
-                    v-for="(mu,mid) in menuList" 
-                    :key="mid"
-                    @mouseenter="mouseenterBar(mid)"
-                    @mouseleave="mouseleaveBar()"
-                >
-                    <div :id="mu.classList" 
-                        :class="barBold(mid)"
+                    <li class="menu-list"
+                        v-for="(mu,mid) in menuList" 
+                        :key="mid"
                     >
-                        {{mu.title}}
-                    </div>
-                    <a href="#" 
-                        :class="{'menu-hover':mid == barShow,'conceal':mid != barShow}"
-                    >
-                        {{mu.title}}
-                    </a>
-                </li>
+                        <div :id="mu.classList" 
+                            class="menu-active menu-icon"
+                        >
+                            {{mu.title}}
+                        </div>
+                        <a href="#" class="menu-hover">
+                            {{mu.title}}
+                        </a>
+                    </li>
             </ul>
 
             <barType/>
@@ -44,34 +40,11 @@ export default {
                 {id:'2',title:'Portfolio',classList:'menu-portfolio'},
                 {id:'3',title:'Contact',classList:'menu-contact'},
             ],
-            barShow:-1,
         };
     },
     components: { barType },
     methods:{
-        barBold(id){
-            if(id == this.barShow){
-                return{"conceal":true}
-            }else{
-                if(id == this.TAG){
-                    return{
-                        'menu-active': true,"menu-icon":true
-                    }
-                }else{
-                    return{
-                        'menu-active': false,"menu-icon":true
-                    }
-                }
-            }
 
-            
-        },
-        mouseenterBar(mid){
-            this.barShow = mid
-        },
-        mouseleaveBar(){
-            this.barShow = -1
-        },
     },
     computed:{
         
@@ -130,7 +103,16 @@ export default {
     font-weight: bold;
     text-shadow: 0 1px 0px rgba(0, 0, 0, 0.75);
     color: #dcdcdc;
+    display: none;
 }
+
+#menu li.menu-list:hover a.menu-hover{
+    display: block;
+}
+#menu li.menu-list:hover div.menu-icon{
+    display: none;
+}
+
 div#menu-intro {
     background-position: 0 top;
 }
@@ -165,5 +147,11 @@ div#menu-contact.menu-active {
 .conceal{
     display: none;
 }
+
+
+/* .bar-enter-active,
+.bar-leave-active{
+    transition: all 2s ease;
+} */
 
 </style>
