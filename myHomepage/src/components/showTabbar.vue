@@ -149,9 +149,4 @@ div#menu-contact.menu-active {
     background-position: -400px bottom;
 }
 
-/* .bar-enter-active,
-.bar-leave-active{
-    transition: all 2s ease;
-} */
-
 </style>

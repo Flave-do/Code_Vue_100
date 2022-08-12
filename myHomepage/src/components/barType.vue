@@ -92,7 +92,7 @@ export default {
     height: 8px;
     z-index: 11;
     transition-property: width;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     -webkit-border-radius: 4px;
         -box-border-radius: 4px;
             border-radius: 4px;
@@ -109,7 +109,7 @@ export default {
     height: 21px;
     z-index: 12;
     transition-property: left;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 #menu-slider {
@@ -128,6 +128,56 @@ export default {
 }
 .color-pointer{
     background-image: url('~@/assets/images/pointer-blue.png');
+}
+
+/* Bar animation */
+.animate-bar {
+	animation: progress 0.5s linear infinite;
+	-moz-animation: progress 0.5s linear infinite;
+	-webkit-animation: progress 0.5s linear infinite;
+	-ms-animation: progress 0.5s linear infinite;
+	-o-animation: progress 0.5s linear infinite;
+}
+
+@-webkit-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -20px 0;
+  }
+}
+@-moz-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -20px 0;
+  }
+}
+@-ms-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -20px 0;
+  }
+}
+@-o-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -20px 0;
+  }
+}
+@keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -20px 0;
+  }
 }
 
 </style>
