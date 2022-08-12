@@ -6,8 +6,6 @@
             <div id="menu-slider-bar" class="slider-bar color-bar animate-bar" :style="barStyle"></div> <!-- Slider Bar -->
                 <div id="menu-slider-pointer" class="slider-pointer color-pointer" :style="pointStyle"></div> <!-- Slider Pointer -->
         </div>
-        <button @click="add">按我右移</button>
-        <button @click="loo">按我左移</button>
     </div>
     <!-- End Slider -->
 </template>
@@ -17,30 +15,32 @@ export default {
     name:'barType',
     data() {
         return {
-            ces:0,
+            barLength:0,
         }
     },
     methods:{
-        add(){
-            this.ces = this.ces+33.3
-            // this.isShow = !this.isShow
-            console.log(this.ces)
-        },
-        loo(){
-          this.ces = this.ces - 33.3
+      pipeMover(LorR,site){
+        if(LorR){
+          this.barLength = this.barLength + site
+        }else{
+          this.barLength = this.barLength - site
         }
+      },
     },
     computed:{
         barStyle(){
             return{
-                width:this.ces+'%'
+                width:this.barLength+'%'
             }
         },
         pointStyle(){
           return{
-                left:this.ces+'%'
+                left:this.barLength+'%'
             }
-        }
+        },
+    },
+    mounted(){
+      this.$bus.$on('pipeMover',this.pipeMover)
     }
 }
 

@@ -39,7 +39,16 @@ export default {
     components: { barType },
     methods:{
         setTag(num){
+            let LorR,site
+            if(num > this.TAG){
+                LorR = true
+                site = (num -this.TAG)*33.3
+            }else if(num < this.TAG){
+                LorR = false
+                site = (this.TAG -num)*33.3
+            }
             this.TAG = num
+            this.$bus.$emit('pipeMover',LorR,site)
         }
     },
     computed:{
