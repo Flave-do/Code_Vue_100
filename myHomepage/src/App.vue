@@ -283,4 +283,289 @@ p {
 	margin-bottom: 10px;
 	line-height: 18px;
 }
+/* MEDIA QUERY
+============================== */
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+    /* Preloader setup */
+	#preloader-container {
+		width: 716px;
+	}
+	
+	/* Inner container width */
+	.inner {
+		width: 716px;
+	}
+	
+	/* Grid width */
+	.one-three,
+	.two-three,
+	.full-three {
+		width: 676px;
+		margin-bottom: 10px;
+	}
+		
+	/* Photo frame width */
+	.photo-frame {
+		margin: 0 auto;
+	}
+	
+	/* Home */
+	.flex-direction-nav {
+		display: none;
+	}
+	
+	/* Portfolio */
+	#portfolio-list {
+		width: 716px;
+	}
+	#portfolio-list li {
+		margin: 0 9px 40px;
+	}
+
+	/* Contact */
+	#gmap {
+		width: 656px;
+	}
+	.form-component {
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}	
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	/* Common */
+	body {
+		font-size: 11px;
+	}
+	h1 {
+		font-size: 36px;
+		line-height: 60px;
+	}
+	h2 {
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 10px;
+	}
+	h3 {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	
+    /* Preloader setup */
+	#preloader-container {
+		width: 470px;
+	}
+	#preloader-title {
+		width: 100%;
+	}
+	
+	/* Menu */
+	#header-inner {
+		height: 100px;
+		width: 384px;
+		margin: 0 auto;
+	}
+	#menu li {
+		width: 96px;
+		padding: 15px 0 0 0;
+	}
+	#menu li div.menu-icon {
+		width: 96px;
+	}
+	#menu-slider {
+		width: 288px;
+	}
+	
+	/* Inner container width */
+	.inner {
+		width: 470px;
+	}
+	
+	/* Grid width */
+	.one-three,
+	.two-three,
+	.full-three {
+		width: 450px;
+		margin: 0 0 10px 0;
+	}
+		
+	/* Photo frame width */
+	.photo-frame {
+		margin: 0 auto;
+	}
+	
+	/* Home */
+	.flex-direction-nav {
+		display: none;
+	}
+	
+	/* Resume */
+	.resume-label {
+		width: 30%;
+		font-size: 12px;
+		float: left;
+	}
+	.resume-info {
+		width: 70%;
+		float: left;
+	}
+	
+	/* Portfolio */
+	#portfolio-list {
+		width: 450px;
+	}
+	#portfolio-list li {
+		margin: 0 35px 30px;
+	}
+
+	/* Contact */
+	#gmap {
+		width: 430px;
+		height: 200px;
+	}
+	.form-component {
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}	
+}
+
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	
+	/* Common */
+	body {
+		font-size: 11px;
+	}
+	h1 {
+		font-size: 36px;
+		line-height: 60px;
+	}
+	h2 {
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 10px;
+	}
+	h3 {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	
+    /* Preloader setup */
+	#preloader-container {
+		width: 300px;
+	}
+	#preloader-title {
+		width: 100%;
+		font-size: 11px;
+	}
+	#preloader-title h1 {
+		font-size: 24px;
+	}
+	#jpreLoader{
+		width:300px;
+	}
+	
+	/* Menu */
+	#header-inner {
+		height: 100px;
+		width: 100%;
+	}
+	#menu li {
+		padding: 25px 0 0 0;
+		width: 25%;
+	}
+	#menu li div.menu-icon {
+		width: 100%;
+	}
+	#menu li a.menu-hover {
+		top: 25px;
+	}
+	#menu-slider {
+		display: none;
+	}
+	
+	/* Inner container width */
+	.inner {
+		width: 300px;
+	}
+	
+	/* Grid width */
+	.one-three,
+	.two-three,
+	.full-three {
+		width: 280px;
+		margin: 0 0 10px 0;
+	}
+		
+	/* Photo frame width */
+	.photo-frame {
+		margin: 0 auto;
+	}
+	
+	/* Home */
+	.flex-direction-nav {
+		display: none;
+	}
+	
+	/* Resume */
+	.resume-label {
+		font-size: 12px;
+		float: none;
+	}
+	.resume-info {
+		float: none;
+	}
+	
+	/* Portfolio */
+	#portfolio-list {
+		width: 280px;
+	}
+	#portfolio-list li {
+		margin: 0 62px 40px 63px;
+		background: #fff;
+	}
+
+	/* Contact */
+	#gmap {
+		width: 260px;
+		height: 200px;
+	}
+	.form-component {
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+	}
+	.textfield {
+		width: 270px;
+	}
+	.textarea {
+		width: 270px;
+		height: 100px;
+	}
+	
+}
+
+.clearfix:before,
+.clearfix:after,
+.content-list:before,
+.content-list:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.content-list:after {
+  clear: both;
+}
+
 </style>
