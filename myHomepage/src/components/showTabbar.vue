@@ -4,19 +4,19 @@
         <div id="header-inner" class="inner">
             <ul id="menu">
                 <li class="menu-list"
-                    v-for="(mu,id) in menuList" 
-                    :key="id">
+                    v-for="(mu,mid) in menuList" 
+                    :key="mid"
+                    @mouseenter="mouseenterBar(mid)"
+                    @mouseleave="mouseleaveBar()"
+                >
                     <div :id="mu.classList" 
                         class="menu-icon" 
-                        :class="mu.id == TAG ? 'menu-active': 'ture'"
-                        @mouseenter="mouseenterBar(id)"
-                        @mouseleave="mouseleaveBar()"
+                        :class="barBold(mid)"
                     >
                         {{mu.title}}
                     </div>
                     <a href="#" 
-                        :class="{'menu-hover':isShow,'conceal':!isShow}"
-                        
+                        :class="{'menu-hover':mid == barShow,'conceal':mid != barShow}"
                     >
                         {{mu.title}}
                     </a>
@@ -45,17 +45,31 @@ export default {
                 {id:'2',title:'Portfolio',classList:'menu-portfolio'},
                 {id:'3',title:'Contact',classList:'menu-contact'},
             ],
-            isShow:true,
+            barShow:-1,
         };
     },
     components: { barType },
     methods:{
-        mouseenterBar(id){
-            console.log(id)
+        barBold(id){
+            if(id == this.TAG){
+                return{
+                    'menu-active': true
+                }
+            }else{
+                return{
+                    'menu-active': false
+                }
+            }
+        },
+        mouseenterBar(mid){
+            this.barShow = mid
         },
         mouseleaveBar(){
-            
+            this.barShow = -1
         },
+    },
+    computed:{
+        
     }
 }
 
