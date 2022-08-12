@@ -3,13 +3,15 @@
     <div id="menu-slider">
         <div id="menu-slider-container">
             <div class="slider-bg bg-black"></div> <!-- Slider Background -->
-            <div id="menu-slider-bar" class="slider-bar color-bar animate-bar" :style="barStyle"></div> <!-- Slider Bar -->
-            <transition name="pointer" :appear="true">
-                <div id="menu-slider-pointer" class="slider-pointer color-pointer" :style="pointStyle"></div> <!-- Slider Pointer -->
-            </transition>
+            <div id="menu-slider-bar" class="slider-bar color-bar animate-bar"></div> <!-- Slider Bar -->
+            
+                <div id="menu-slider-pointer" 
+                  class="slider-pointer color-pointer" 
+                  :style="barStyle" 
+                >
+                </div> <!-- Slider Pointer -->
         </div>
         <button @click="add">按我右移</button>
-        <button @click="loo">按我左移</button>
     </div>
     <!-- End Slider -->
 </template>
@@ -19,31 +21,19 @@ export default {
     name:'barType',
     data() {
         return {
-            ces:0,
+           
         }
     },
     methods:{
-        add(){
-            this.ces = this.ces+33.3
-            // this.isShow = !this.isShow
-            console.log(this.ces)
-        },
-        loo(){
-          this.ces = this.ces - 33.3
-        }
+      add(){
+        
+          
+      },
+      
     },
-    computed:{
-        barStyle(){
-            return{
-                width:this.ces+'%'
-            }
-        },
-        pointStyle(){
-          return{
-                left:this.ces+'%'
-            }
-        }
-    }
+    
+    
+    
 }
 
 </script>
@@ -93,8 +83,6 @@ export default {
     width: 0%;
     height: 8px;
     z-index: 11;
-    transition-property: width;
-    transition-duration: 1s;
     -webkit-border-radius: 4px;
         -box-border-radius: 4px;
             border-radius: 4px;
@@ -114,6 +102,16 @@ export default {
     transition-duration: 1s;
 }
 
+/* Bar animation */
+/* .pointer-enter-active {
+    animation: progress 0.5s linear infinite;
+    -moz-animation: progress 0.5s linear infinite;
+    -webkit-animation: progress 0.5s linear infinite;
+    -ms-animation: progress 0.5s linear infinite;
+    -o-animation: progress 0.5s linear infinite;
+} */
+
+
 #menu-slider {
     padding-top: 70px;
     width: 408px;
@@ -126,10 +124,22 @@ export default {
 }
 
 .color-bar{
-    background-image: url('~@/assets/images/bar-blue.png');
+  background-color:aqua;
 }
 .color-pointer{
-    background-image: url('~@/assets/images/pointer-blue.png');
+    background-color:yellow ;
+}
+.change-bar{
+  animation-name: progress;
+  animation-duration: 1s;
 }
 
+@keyframes progress {
+  from {
+    left: 0;
+  }
+  to {
+    left: 33.3%;
+  }
+}
 </style>

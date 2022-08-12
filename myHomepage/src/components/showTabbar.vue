@@ -3,21 +3,28 @@
     <div id="header">
         <div id="header-inner" class="inner">
             <ul id="menu">
-                <li class="menu-list">
-                    <div id="menu-intro" class="menu-icon menu-active">Intro</div>
-                    <a href="#" class="menu-hover">Intro</a></li>
-                <li class="menu-list menu-click">
-                    <div id="menu-resume" class="menu-icon">Intro</div>
-                    <a href="#" class="menu-hover">Resume</a></li>
-                <li class="menu-list menu-click">
-                    <div id="menu-portfolio" class="menu-icon">Intro</div>
-                    <a href="#" class="menu-hover">Portfolio</a></li>
-                <li class="menu-list menu-click">
-                    <div id="menu-contact" class="menu-icon">Intro</div>
-                    <a href="#" class="menu-hover">Contact</a></li>
+                <li class="menu-list"
+                    v-for="(mu,id) in menuList" 
+                    :key="id">
+                    <div :id="mu.classList" 
+                        class="menu-icon" 
+                        :class="mu.id == TAG ? 'menu-active': 'ture'"
+                        @mouseenter="mouseenterBar(id)"
+                        @mouseleave="mouseleaveBar()"
+                    >
+                        {{mu.title}}
+                    </div>
+                    <a href="#" 
+                        :class="{'menu-hover':isShow,'conceal':!isShow}"
+                        
+                    >
+                        {{mu.title}}
+                    </a>
+                </li>
             </ul>
 
             <barType/>
+            
 
         </div>
     </div>
@@ -31,10 +38,25 @@ export default {
     name: "showTabbar",
     data() {
         return {
-            Classification: "1"
+            TAG:0,
+            menuList:[
+                {id:'0',title:'Intro',classList:'menu-intro'},
+                {id:'1',title:'Resume',classList:'menu-resume'},
+                {id:'2',title:'Portfolio',classList:'menu-portfolio'},
+                {id:'3',title:'Contact',classList:'menu-contact'},
+            ],
+            isShow:true,
         };
     },
-    components: { barType }
+    components: { barType },
+    methods:{
+        mouseenterBar(id){
+            console.log(id)
+        },
+        mouseleaveBar(){
+            
+        },
+    }
 }
 
 </script>
@@ -121,6 +143,8 @@ div#menu-contact.menu-active {
     background-position: -400px bottom;
 }
 
-
+.conceal{
+    display: none;
+}
 
 </style>
