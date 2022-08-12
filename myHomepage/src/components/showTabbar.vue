@@ -10,7 +10,6 @@
                     @mouseleave="mouseleaveBar()"
                 >
                     <div :id="mu.classList" 
-                        class="menu-icon" 
                         :class="barBold(mid)"
                     >
                         {{mu.title}}
@@ -51,15 +50,21 @@ export default {
     components: { barType },
     methods:{
         barBold(id){
-            if(id == this.TAG){
-                return{
-                    'menu-active': true
-                }
+            if(id == this.barShow){
+                return{"conceal":true}
             }else{
-                return{
-                    'menu-active': false
+                if(id == this.TAG){
+                    return{
+                        'menu-active': true,"menu-icon":true
+                    }
+                }else{
+                    return{
+                        'menu-active': false,"menu-icon":true
+                    }
                 }
             }
+
+            
         },
         mouseenterBar(mid){
             this.barShow = mid
