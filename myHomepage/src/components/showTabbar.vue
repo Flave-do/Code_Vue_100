@@ -9,19 +9,16 @@
                             :class='mid == TAG ?"menu-active":true'
                         >
                         </div>
-                        <a href="#" class="menu-hover">
+                        <a href="#" class="menu-hover" @click="setTag(mid)">
                             {{mu.title}}
                         </a>
                     </li>
             </ul>
-
+            <!-- bar -->
             <barType/>
-            
 
         </div>
     </div>
-    <!-- End Header -->
-
 </template>
 
 <script>
@@ -41,7 +38,9 @@ export default {
     },
     components: { barType },
     methods:{
-
+        setTag(num){
+            this.TAG = num
+        }
     },
     computed:{
         
