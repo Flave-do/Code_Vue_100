@@ -3,7 +3,7 @@
     <div id="resume" class="content-list">
         <div class="one-three">
             <div class="photo-frame">
-                <img src="img/photos/sfan.png" alt="Photo of me"/>
+                <img src="~@/assets/images/photos/sfan.png" alt="Photo of me"/>
             </div>
         </div>
         <div class="two-three">
@@ -154,6 +154,108 @@ export default {
 </script>
 
 <style lang='css' scoped> 
+.clearfix,
+.content-list {
+  zoom: 1;
+}
+.one-three,
+.two-three,
+.full-three {
+    display: inline;
+    float: left;
+    margin: 0 10px;
+}
+/* .one-three{
+    width: 230px;
+}
+.two-three{
+    width: 510px;
+}
+.full-three {
+    width: 760px;
+} */
+.photo-frame {
+    background: url('~@/assets/images/frame-front.png') no-repeat center center;
+    width: 196px;
+    height: 196px;
+    padding: 16px 17px 47px 17px;
+}
+.group-container{
+    padding-bottom: 15px;
+}
+.separator {
+    background: url('~@/assets/images/separator.png') no-repeat center center;
+    height: 60px;
+}
 
+/* Resume */
+.resume-group {
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+.resume-label {
+    font-size: 14px;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    color: #373737;
+    width: 30%;
+    float: left;
+}
+.resume-info {
+    width: 70%;
+    float: left;
+}
+.resume-bar{
+    width: 100%;
+    margin: 3px 0;
+    height: 8px;
+    position: relative;
+}
+    .level1 {width: 10%;}
+    .level2 {width: 20%;}
+    .level3 {width: 30%;}
+    .level4 {width: 40%;}
+    .level5 {width: 50%;}
+    .level6 {width: 60%;}
+    .level7 {width: 70%;}
+    .level8 {width: 80%;}
+    .level9 {width: 90%;}
+    .level10 {width: 100%;}
 
+.color-bar {
+	background-image: url('~@/assets/images/bar-blue.png');
+}
+.slider-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    z-index: 10;
+    -webkit-border-radius: 4px;
+        -box-border-radius: 4px;
+             border-radius: 4px;
+}
+.bg-grey {
+    background: #cecece;
+    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(255, 255, 255, 0.9);
+        -box-box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(255, 255, 255, 0.9);
+            box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(255, 255, 255, 0.9);
+}
+.slider-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-position: left top;
+    /* width: 0%; */
+    height: 8px;
+    z-index: 11;
+    -webkit-border-radius: 4px;
+        -box-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+        -box-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
 </style>

@@ -12,9 +12,9 @@
             <div id="content-core-wrapper">
                 <div id="content-core">
                     <demoIntro v-if="1==2"/>
-                    <demoResume/>
-                    <demoPortfolio/>
-                    <demoContact/>
+                    <demoResume v-if="1==2"/>
+                    <demoPortfolio />
+                    <demoContact v-if="1==2"/>
                 </div>
             </div>
             <div id="content-footer"></div> <!-- Content Footer -->
@@ -23,9 +23,9 @@
         <!-- Social Media -->
         <div id="socmed">
             <ul id="socmed-list">
-                <li><a href="http://bbs.fishc.com" target="_blank"><img src="img/social/facebook.png" alt="Facebook"/></a></li>
-                <li><a href="http://bbs.fishc.com" target="_blank"><img src="img/social/twitter.png" alt="Twitter"/></a></li>
-                <li><a href="http://bbs.fishc.com" target="_blank"><img src="img/social/weixin.png" alt="Skype"/></a></li>
+                <li><a href="http://bbs.fishc.com" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/facebook.png" alt="Facebook"/></a></li>
+                <li><a href="http://bbs.fishc.com" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/twitter.png" alt="Twitter"/></a></li>
+                <li><a href="http://bbs.fishc.com" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/weixin.png" alt="Skype"/></a></li>
             </ul>
         </div>
     </div>
@@ -106,27 +106,14 @@ export default {
     float: left;
     margin: 0 10px;
 }
-.one-three{
-    width: 230px;
-}
-.two-three{
-    width: 510px;
-}
-.full-three {
-    width: 760px;
-}
-.photo-frame {
-    background: url('~@/assets/images/frame-front.png') no-repeat center center;
-    width: 196px;
-    height: 196px;
-    padding: 16px 17px 47px 17px;
-}
-.group-container{
-    padding-bottom: 15px;
-}
-.separator {
-    background: url('~@/assets/images/separator.png') no-repeat center center;
-    height: 60px;
-}
 
+/* Social Media */
+#socmed {
+	text-align: center;
+}
+#socmed li {
+	position: relative;
+	display: inline-block;
+	margin: 0 2px;
+}
 </style>

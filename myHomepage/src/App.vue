@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div id="wrapper">
     <showTabbar/>
     <demoOverview/>
     <!-- Footer -->
     <footBottom/>
     <!-- This section is for Splash Screen -->
-    <beforeLoaded/>
+    <beforeLoaded v-if="1 ==2"/>
   </div>
 </template>
 
