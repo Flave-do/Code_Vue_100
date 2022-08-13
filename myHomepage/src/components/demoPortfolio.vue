@@ -124,7 +124,7 @@ export default {
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     background-color: #414141;
     *background-color: #222222;
     background-image: -ms-linear-gradient(top, #555555, #222222);
