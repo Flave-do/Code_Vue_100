@@ -18,17 +18,28 @@
 
         <!-- Portfolio Lists -->
         <ul id="portfolio-list" class="isotope" style="position: relative; overflow: hidden; height: 480px;">
-                <li class="photography isotope-item" 
+                <li class="isotope-item" 
+                    :class="imgs.imgClass"
                     :style="liItemStyle"
                     v-for="(imgs,imgid) in imgDemo" 
                     :key="imgid"
                 >
-                    <a :href="imgs.aHref" rel="lightbox[portfolio]" :title="imgs.title">
-                        <div class="img_wrapper" :style="imgWrapperStyle(imgid)">
-                            <img class="img_grayscale" :src="imgs.grayscalesrc" alt="" :style="imgGrayscaleStyle(imgid)"/>
-                            <img :src="imgs.imgSrc" alt="" :style="imgSrcStyle(imgid)"/>
-                        </div>
-                    </a>
+                    <CoolLightBox 
+                            :items="imgs.items" 
+                            :index="index"
+                            @close="index = null">
+                    </CoolLightBox>
+                    <div class="img_wrapper" :style="imgWrapperStyle(imgs)">
+                        <div class="image"
+                        @click="index = imgid"
+                        v-for="(image,imageIndex) in imgs.items"
+                        :key="imageIndex"
+                        :style="{backgroundImage: 'url(' + require('../assets/images/portfolio/'+image.src) + ')'}"
+                        :title="imgs.title"
+                        >
+                        <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle(imgs)"/>
+                    </div>
+                    </div>
                 </li>
         </ul>
         <!-- End Portfolio Lists -->
@@ -39,11 +50,15 @@
 </template>
 
 <script>
+import CoolLightBox from 'vue-cool-lightbox'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 export default {
     name:'demoPortfolio',
+    components: {CoolLightBox,},
     data() {
         return {
             dataFilter:'*',
+            index:'null',
             dataFilterList:[
                 {id:'0','dataFilter':'*',title:'所有'},
                 {id:'1','dataFilter':'animation',title:'项目一'},
@@ -52,14 +67,49 @@ export default {
                 {id:'4','dataFilter':'printdesign',title:'项目四'},
             ],
             imgDemo:[
-                {id:'0',imgClass:'photography isotope-item',title:'photography',aHref:'~@/assets/images/portfolio/preview1.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'1',imgClass:'animation isotope-item',title:'animation',aHref:'~@/assets/images/portfolio/preview2.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'2',imgClass:'animation isotope-item',title:'animation',aHref:'~@/assets/images/portfolio/preview3.jpg',grayscale:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'3',imgClass:'printdesign isotope-item',title:'photography',aHref:'~@/assets/images/portfolio/preview4.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'4',imgClass:'animation isotope-item',title:'animation',aHref:'~@/assets/images/portfolio/preview5.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'5',imgClass:'animation isotope-item',title:'animation',aHref:'~@/assets/images/portfolio/preview6.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'6',imgClass:'webdesign isotope-item',title:'webdesign',aHref:'~@/assets/images/portfolio/preview7.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
-                {id:'7',imgClass:'printdesign isotope-item',title:'photography',aHref:'~@/assets/images/portfolio/preview8.jpg',grayscalesrc:'~@/assets/images/portfolio/FishC.png',imgSrc:'~@/assets/images/portfolio/FishC.png'},
+                {id:'0',imgClass:'photography',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview1.jpg',
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                {id:'1',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview2.png'},
+                    ]
+                },
+                {id:'2',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview3.png'},
+                    ]
+                },
+                {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview4.png'},
+                    ]
+                },
+                {id:'4',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview5.png'},
+                    ]
+                },
+                {id:'5',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview5.png'},
+                    ]
+                },
+                {id:'6',imgClass:'webdesign',title:'webdesign',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview5.png'},
+                    ]
+                },
+                {id:'7',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {src:'preview5.png'},
+                    ]
+                },
             ],
             liItemStyle:'position: absolute; left: 0px; top: 0px; transform: translate(0px);',
             // imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
@@ -70,26 +120,29 @@ export default {
     computed:{
         imgWrapperStyle(){
             return function(pic){
-                console.log(pic,'imgWrapperStyle')
-                return 'display: inline-block; width: 145px; height: 145px;'
+                if(this.dataFilter == '*'){
+                    return 'display: inline-block; width: 145px;height: 145px;'
+                }else if(this.dataFilter == pic.imgClass){
+                    return 'display: inline-block; width: 145px; height: 145px;'
+                }else{return 'display: none;'}
             } 
         },
         imgGrayscaleStyle(){
-            return function(pic){
-                console.log(pic,'imgGrayscaleStyle')
+            return function(){
+                
                 return 'opacity: 0; position: absolute; left: 5px; top: 5px; z-index: 998;'
             } 
         },
         imgSrcStyle(){
-            return function(pic){
-                console.log(pic,'imgSrcStyle')
+            return function(){
+                
                 return 'position: absolute; left: 5px; top: 5px;'
             } 
         }
     },
     methods:{
-        changeFilter(num){
-            this.dataFilter = num
+        changeFilter(filter){
+            this.dataFilter = filter
         }
     }
 }
