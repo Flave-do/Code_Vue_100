@@ -21,26 +21,42 @@
                 <li class="isotope-item" 
                     :class="imgs.imgClass"
                     :style="liItemStyle(imgs)"
-                    v-for="(imgs,imgid) in imgDemo" 
-                    :key="imgid"
+                    v-for="(imgs,imgId) in imgDemo" 
+                    :key="imgId"
                 >
-                    <CoolLightBox 
+                    <CoolLightBox
                         :items="imgs.items" 
+                        :index="index[imgId].index"
+                        :fullScreen="true"
+                        @close="index[imgId].index = null">
+                    </CoolLightBox>
+                    <div class="img_wrapper" :style="imgWrapperStyle">
+                        <div class="image"
+                            v-for="(image,imageIndex) in imgs.items"
+                            :key="imageIndex"
+                            @click="index[imgId].index = imageIndex"
+                            >
+                            <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle"/>
+                        </div>
+                    </div>
+                    <!-- <CoolLightBox 
+                        :items="imgDemo[0].items" 
                         :index="index"
                         :fullScreen="true"
                         @close="index = null">
                     </CoolLightBox>
                     <div class="img_wrapper" :style="imgWrapperStyle">
                         <div class="image"
-                        v-for="(image,imageIndex) in imgs.items"
-                        :key="imageIndex"
-                        @click="index = imageIndex"
-                        :style="{backgroundImage: 'url(' + image.src + ')'}"
-                        :title="imgs.title"
+                            v-for="(image,imageIndex) in imgDemo[0].items"
+                            :key="imageIndex"
+                            @click="index = imageIndex"
+                            :style="{backgroundImage: 'url(' + image.src + ')'}"
+                            :title="imgs.title"
                         >
-                        <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle"/>
-                    </div>
-                    </div>
+                            <img :src="require('../assets/images/portfolio/'+imgDemo[0].imgSrc)" alt="" :style="imgSrcStyle"/>
+                        </div>
+                    </div> -->
+                    
                 </li>
         </ul>
         <!-- End Portfolio Lists -->
@@ -59,7 +75,16 @@ export default {
     data() {
         return {
             dataFilter:'*',
-            index:'null',
+            index:[
+                {index:'null',},
+                {index:'null',},
+                {index:'null',},
+                {index:'null',},
+                {index:'null',},
+                {index:'null',},
+                {index:'null',},
+                {index:'null',},
+            ],
             dataFilterList:[
                 {id:'0','dataFilter':'*',title:'所有'},
                 {id:'1','dataFilter':'animation',title:'项目一'},
@@ -72,7 +97,7 @@ export default {
                     items:[
                         {
                             src:require('../assets/images/portfolio/preview1.jpg'),
-                            thumb:require('../assets/images/portfolio/preview3.png'),
+                            thumb:require('../assets/images/portfolio/preview2.png'),
                             title: 'In nature, nothing is perfect and everything is perfect',
                             description: "Photo by Lucas",
                         },
@@ -84,32 +109,32 @@ export default {
                         },
                     ]
                 },
-                // {id:'1',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview4.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //         {
-                //             src:require('../assets/images/portfolio/preview4.png'),
-                //             thumb:require('../assets/images/portfolio/preview3.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'2',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
+                {id:'1',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview2.png'),
+                            thumb:require('../assets/images/portfolio/preview3.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                        {
+                            src:require('../assets/images/portfolio/preview4.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                {id:'2',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview5.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
                 // {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
                 //     items:[
                 //         {
@@ -177,11 +202,17 @@ export default {
                 }else{return 'display: none;'}
             } 
         },
+        indexs(){
+            return 1
+        }
     },
     methods:{
         changeFilter(filter){
             this.dataFilter = filter
-        }
+        },
+    },
+    mounted(){
+        
     }
 }
 
