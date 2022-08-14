@@ -1,6 +1,14 @@
 <template>
     <!-- Portfolio -->
     <div id="portfolio" class="content-list">
+        <CoolLightBox 
+            v-for="(imgs2,imgid2) in imgDemo"
+            :key="imgid2"
+            :items="imgs2.items" 
+            :index="index"
+            :fullScreen="true"
+            @close="index = null">
+        </CoolLightBox>
         <!-- Portfolio Filter -->
         <div id="portfolio-filter-container">
             <ul id="portfolio-filter">
@@ -24,12 +32,7 @@
                     v-for="(imgs,imgid) in imgDemo" 
                     :key="imgid"
                 >
-                    <CoolLightBox 
-                            :items="imgs.items" 
-                            :index="index"
-                            :fullScreen="true"
-                            @close="index = null">
-                    </CoolLightBox>
+
                     <div class="img_wrapper" :style="imgWrapperStyle(imgs)">
                         <div class="image"
                         @click="index = imgid"

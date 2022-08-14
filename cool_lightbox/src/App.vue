@@ -12,7 +12,7 @@
         v-for="(image, imageIndex) in items"
         :key="imageIndex"
         @click="index = imageIndex"
-        :style="{ backgroundImage: 'url(' + image + ')' }"
+        :style="{ backgroundImage: 'url(' + image.src + ')' }"
       ></div>
     </div>
   </div>
@@ -30,8 +30,12 @@ export default {
   data: function () {
     return {
       items: [
-        '~@/assets/logo.png',
-        '~@/assets/logo.png',
+        {
+          src:require('./assets/logo.png'),
+          thumb:require('./assets/logo.png'),
+          title: 'In nature, nothing is perfect and everything is perfect',
+          description: "Photo by Lucas",
+        },
       ],
       index: null
     };
