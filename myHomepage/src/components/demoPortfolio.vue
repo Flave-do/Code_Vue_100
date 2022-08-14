@@ -27,6 +27,7 @@
                     <CoolLightBox 
                             :items="imgs.items" 
                             :index="index"
+                            :fullScreen="true"
                             @close="index = null">
                     </CoolLightBox>
                     <div class="img_wrapper" :style="imgWrapperStyle(imgs)">
@@ -34,7 +35,7 @@
                         @click="index = imgid"
                         v-for="(image,imageIndex) in imgs.items"
                         :key="imageIndex"
-                        :style="{backgroundImage: 'url(' + require('../assets/images/portfolio/'+image.src) + ')'}"
+                        :style="{backgroundImage: 'url(' + image.src + ')'}"
                         :title="imgs.title"
                         >
                         <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle(imgs)"/>
@@ -69,47 +70,90 @@ export default {
             imgDemo:[
                 {id:'0',imgClass:'photography',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
                     items:[
-                        {src:'preview1.jpg',
+                        {
+                            src:require('../assets/images/portfolio/preview1.jpg'),
+                            thumb:require('../assets/images/portfolio/preview3.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                        {
+                            src:require('../assets/images/portfolio/preview1.jpg'),
+                            thumb:require('../assets/images/portfolio/preview3.png'),
                             title: 'In nature, nothing is perfect and everything is perfect',
                             description: "Photo by Lucas",
                         },
                     ]
                 },
-                {id:'1',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview2.png'},
-                    ]
-                },
-                {id:'2',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview3.png'},
-                    ]
-                },
-                {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview4.png'},
-                    ]
-                },
-                {id:'4',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview5.png'},
-                    ]
-                },
-                {id:'5',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview5.png'},
-                    ]
-                },
-                {id:'6',imgClass:'webdesign',title:'webdesign',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview5.png'},
-                    ]
-                },
-                {id:'7',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                    items:[
-                        {src:'preview5.png'},
-                    ]
-                },
+                // {id:'1',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview2.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
+                // {id:'2',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview3.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
+                // {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview4.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
+                // {id:'4',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview5.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
+                // {id:'5',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview5.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
+                // {id:'6',imgClass:'webdesign',title:'webdesign',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview5.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
+                // {id:'7',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                //     items:[
+                //         {
+                //             src:'preview5.png',
+                //             thumb:'preview1.jpg',
+                //             title: 'In nature, nothing is perfect and everything is perfect',
+                //             description: "Photo by Lucas",
+                //         },
+                //     ]
+                // },
             ],
             liItemStyle:'position: absolute; left: 0px; top: 0px; transform: translate(0px);',
             // imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
