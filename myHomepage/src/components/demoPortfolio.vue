@@ -210,6 +210,11 @@ export default {
             this.dataFilter = filter
         },
     },
+    watch:{
+        // portfolioWidth(value){
+        //     console.log(value)
+        // }
+    },
     mounted(){
         // // 实时获取浏览器宽度高度
         // const that = this
@@ -222,17 +227,15 @@ export default {
         //         console.log('that',that.windowWidth,that.windowHeight)
         //     })()
         // }
+        const that = this
         window.onresize = () => {
             return (() => {
-                this.portfolioWidth = this.$refs.portfoliobox.offsetWidth
-                // console.log(this.portfolioWidth)
+                that.portfolioWidth = that.$refs.portfoliobox.offsetWidth
             })()
         }
     },
-    watch:{
-        // portfolioWidth(value){
-        //     console.log(value)
-        // }
+    destroyed(){
+        window.onresize = null
     }
 }
 
