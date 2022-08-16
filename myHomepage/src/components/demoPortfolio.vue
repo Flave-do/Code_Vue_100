@@ -186,7 +186,7 @@ export default {
                 if(this.dataFilter == '*'){
                     topy = parseInt(lefx/this.portfolioWidth)
                     lefx = lefx%this.portfolioWidth
-                    console.log('topy',topy,'lefx',lefx,'width',this.portfolioWidth)
+                    // console.log('topy',topy,'lefx',lefx,'width',this.portfolioWidth)
                     return 'position: absolute; left:'+lefx+'px; top: '+topy*200+'px;'
                 }else if(this.dataFilter == pic.imgClass){
                     return 'display: inline-block; width: 145px; height: 145px;'
@@ -209,34 +209,24 @@ export default {
         changeFilter(filter){
             this.dataFilter = filter
         },
-    },
-    watch:{
-        // portfolioWidth(value){
-        //     console.log(value)
-        // }
-    },
-    mounted(){
-        // // 实时获取浏览器宽度高度
-        // const that = this
-        // window.onresize = () => {
-        //     return (() => {
-        //         window.fullHeight = document.documentElement.clientHeight
-        //         window.fullWidth = document.documentElement.clientWidth
-        //         that.windowHeight = window.fullHeight // 高
-        //         that.windowWidth = window.fullWidth // 宽
-        //         console.log('that',that.windowWidth,that.windowHeight)
-        //     })()
-        // }
-        const that = this
-        window.onresize = () => {
-            return (() => {
+        GetPortfolioWidth(){
+            const that = this
+            this.$nextTick(() => {
+                // var domWidth = this.$refs.container.clientWidth // 宽
+                // var domHeight = this.$refs.container.clientHeight // 高
                 that.portfolioWidth = that.$refs.portfoliobox.offsetWidth
-            })()
+            })
         }
     },
+
+    created(){
+        window.addEventListener('resize', this.GetPortfolioWidth); //注册监听器
+        this.GetPortfolioWidth() //页面创建时先调用一次
+    },
     destroyed(){
-        window.onresize = null
+    window.removeEventListener('resize', this.GetPortfolioWidth)
     }
+
 }
 
 </script>
