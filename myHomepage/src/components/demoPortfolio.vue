@@ -259,7 +259,7 @@ export default {
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    /* vertical-align: middle; */
+    vertical-align: middle;
     background-color: #414141;
     *background-color: #222222;
     background-image: -ms-linear-gradient(top, #555555, #222222);
@@ -267,7 +267,7 @@ export default {
     background-image: -webkit-linear-gradient(top, #555555, #222222);
     background-image: -o-linear-gradient(top, #555555, #222222);
     background-image: -moz-linear-gradient(top, #555555, #222222);
-    background-image: linear-gradient(top, #555555, #222222);
+    /* background-image: linear-gradient(top, #555555, #222222); */
     background-repeat: repeat-x;
     border-color: #222222 #222222 #000000;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
