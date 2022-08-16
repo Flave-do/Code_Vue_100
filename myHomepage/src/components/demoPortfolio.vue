@@ -1,6 +1,6 @@
 <template>
     <!-- Portfolio -->
-    <div id="portfolio" class="content-list">
+    <div id="portfolio" class="content-list" ref="portfoliobox">
         <!-- Portfolio Filter -->
         <div id="portfolio-filter-container">
             <ul id="portfolio-filter">
@@ -36,27 +36,9 @@
                             :key="imageIndex"
                             @click="index[imgId].index = imageIndex"
                             >
-                            <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle"/>
+                            <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt=""/>
                         </div>
                     </div>
-                    <!-- <CoolLightBox 
-                        :items="imgDemo[0].items" 
-                        :index="index"
-                        :fullScreen="true"
-                        @close="index = null">
-                    </CoolLightBox>
-                    <div class="img_wrapper" :style="imgWrapperStyle">
-                        <div class="image"
-                            v-for="(image,imageIndex) in imgDemo[0].items"
-                            :key="imageIndex"
-                            @click="index = imageIndex"
-                            :style="{backgroundImage: 'url(' + image.src + ')'}"
-                            :title="imgs.title"
-                        >
-                            <img :src="require('../assets/images/portfolio/'+imgDemo[0].imgSrc)" alt="" :style="imgSrcStyle"/>
-                        </div>
-                    </div> -->
-                    
                 </li>
         </ul>
         <!-- End Portfolio Lists -->
@@ -190,21 +172,38 @@ export default {
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
             imgGrayscaleStyle:'opacity: 0; position: absolute; left: 5px; top: 5px; z-index: 998;',
             // imgSrcStyle:'position: absolute; left: 5px; top: 5px;',
+            portfolioWidth:960,
+            // windowWidth: document.documentElement.clientWidth, // 实时屏幕宽度
+            // windowHeight: document.documentElement.clientHeight // 实时屏幕高度
         }
     },
     computed:{
         liItemStyle(){
             return function(pic){
+                // console.log(this.portfolioWidth)
+                let lefx = (pic.id-0)*225
+                let topy = 0
                 if(this.dataFilter == '*'){
-                    return 'display: inline-block; width: 145px;height: 145px;'
+                    topy = parseInt(lefx/this.portfolioWidth)
+                    lefx = lefx%this.portfolioWidth
+                    console.log('topy',topy,'lefx',lefx,'width',this.portfolioWidth)
+                    return 'position: absolute; left:'+lefx+'px; top: '+topy*200+'px;'
                 }else if(this.dataFilter == pic.imgClass){
                     return 'display: inline-block; width: 145px; height: 145px;'
-                }else{return 'display: none;'}
+                }else{
+                    return 'display: none;'
+                }
             } 
         },
-        indexs(){
-            return 1
-        }
+        // portfolioWidth:{
+        //     get(){
+        //         portfolioWidth = this.$refs.portfoliobox.offsetWidth
+        //         return portfolioWidth
+        //     },
+        //     set(value){
+        //         console(value)
+        //     }
+        // } 
     },
     methods:{
         changeFilter(filter){
@@ -212,7 +211,28 @@ export default {
         },
     },
     mounted(){
-        
+        // // 实时获取浏览器宽度高度
+        // const that = this
+        // window.onresize = () => {
+        //     return (() => {
+        //         window.fullHeight = document.documentElement.clientHeight
+        //         window.fullWidth = document.documentElement.clientWidth
+        //         that.windowHeight = window.fullHeight // 高
+        //         that.windowWidth = window.fullWidth // 宽
+        //         console.log('that',that.windowWidth,that.windowHeight)
+        //     })()
+        // }
+        window.onresize = () => {
+            return (() => {
+                this.portfolioWidth = this.$refs.portfoliobox.offsetWidth
+                // console.log(this.portfolioWidth)
+            })()
+        }
+    },
+    watch:{
+        // portfolioWidth(value){
+        //     console.log(value)
+        // }
     }
 }
 
@@ -345,5 +365,7 @@ export default {
        -o-transition-duration: 0s;
           transition-duration: 0s;
 }
-
+.img_wrapper{
+    overflow: hidden
+}
 </style>
