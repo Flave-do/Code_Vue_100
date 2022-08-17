@@ -21,7 +21,7 @@
                 <li class="isotope-item" 
                     :class="imgs.imgClass"
                     :style="liItemStyle(imgs)"
-                    v-for="(imgs,imgId) in imgDemo" 
+                    v-for="(imgs,imgId) in imgDemo.filter(obj => {return obj.imgClass === this.dataFilter})" 
                     :key="imgId"
                 >
                     <CoolLightBox
@@ -188,23 +188,28 @@ export default {
                 let boxWidth = (widthX + marginX*2)
                 let lefX = 0
                 let topY = 0
-                if(this.dataFilter == '*'){
-                    topY = parseInt(picId/rowX)*230
-                    lefX = boxWidth*(picId%rowX)
-                    return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
-                }else if(this.dataFilter == pic.imgClass){
-                    return 'display: inline-block; width: 145px; height: 145px;'
-                }else{
-                    return 'display: none;'
-                }
-            } 
+            //     if(this.dataFilter == '*'){
+            //         topY = parseInt(picId/rowX)*230
+            //         lefX = boxWidth*(picId%rowX)
+            //         return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
+            //     }else if(this.dataFilter == pic.imgClass){
+            //         return 'display: inline-block; width: 145px; height: 145px;'
+            //     }else{
+            //         return 'display: none;'
+            //     }
+            // } 
+                topY = parseInt(picId/rowX)*230
+                lefX = boxWidth*(picId%rowX)
+                return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
+            }
         },
         // imgWrapperStyle(){
         //    // 展示图标框大小
         // }
         imgSrcStyle(){
            // img图标大小
-           return 'position: absolute;left: 5px;top: 5px;'
+        //    position: absolute;left: 5px;top: 5px;
+           return ''
         }
 
     },
