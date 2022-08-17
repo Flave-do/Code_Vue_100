@@ -182,26 +182,15 @@ export default {
         },
         liItemStyle(){
             return function(pic){
-                let picId = pic
-                console.log(picId)
-                // let widthX = 155
-                // let rowX = parseInt(this.portfolioWidth/widthX)
-                // let marginX = (this.portfolioWidth-rowX*widthX)/rowX/2
-                // let boxWidth = (widthX + marginX*2)
-                // let lefX = 0
-                // let topY = 0
-                // if(this.dataFilter == '*'){
-                //     topY = parseInt(picId/rowX)*230
-                //     lefX = boxWidth*(picId%rowX)
-                //     return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
-                // }else if(this.dataFilter == pic.imgClass){
-                //     // 这里需要计算当前显示的个数
-                //     topY = parseInt(this.tabX/rowX)*230
-                //     lefX = boxWidth*(this.tabX%rowX)
-                //     return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
-                // }else{
-                //     return 'display: none;'
-                // }
+                let widthX = 155
+                let rowX = parseInt(this.portfolioWidth/widthX)
+                let marginX = (this.portfolioWidth-rowX*widthX)/rowX/2
+                let boxWidth = (widthX + marginX*2)
+                let lefX = 0
+                let topY = 0
+                topY = parseInt(pic/rowX)*230
+                lefX = boxWidth*(pic%rowX)
+                return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
             } 
         },
         // imgWrapperStyle(){
@@ -227,11 +216,12 @@ export default {
             })
         },
         dataFilterRom(data){
+            let that = this
             return data.filter(obj => {
-                if(this.dataFilter === '*'){
+                if(that.dataFilter === '*'){
                     return obj
                 }else{
-                   return obj.imgClass === this.dataFilter 
+                   return obj.imgClass === that.dataFilter 
                 }
             })
         }
