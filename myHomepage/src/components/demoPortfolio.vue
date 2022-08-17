@@ -170,7 +170,6 @@ export default {
             ],
             // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
-            // imgSrcStyle:'opacity: 0;position: absolute;left: 5px;top: 5px;z-index: 998;',
             portfolioWidth:0,
             // windowWidth: document.documentElement.clientWidth, // 实时屏幕宽度
             // windowHeight: document.documentElement.clientHeight // 实时屏幕高度
@@ -182,13 +181,17 @@ export default {
         },
         liItemStyle(){
             return function(pic){
-                let lefx = (pic.id-0)*173
-                let topy = 0
+                let picId = pic.id
+                let widthX = 155
+                let rowX = parseInt(this.portfolioWidth/widthX)
+                let marginX = (this.portfolioWidth-rowX*widthX)/rowX/2
+                let boxWidth = (widthX + marginX*2)
+                let lefX = 0
+                let topY = 0
                 if(this.dataFilter == '*'){
-                    topy = parseInt((lefx+173)/this.portfolioWidth)
-                    lefx = lefx%this.portfolioWidth
-                    // console.log('topy',topy,'lefx',lefx,'width',this.portfolioWidth)
-                    return 'position: absolute; left:'+lefx+'px; top: '+topy*230+'px;'
+                    topY = parseInt(picId/rowX)*230
+                    lefX = boxWidth*(picId%rowX)
+                    return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
                 }else if(this.dataFilter == pic.imgClass){
                     return 'display: inline-block; width: 145px; height: 145px;'
                 }else{
@@ -199,9 +202,10 @@ export default {
         // imgWrapperStyle(){
         //    // 展示图标框大小
         // }
-        // imgSrcStyle(){
-        //    // img图标大小
-        // }
+        imgSrcStyle(){
+           // img图标大小
+           return 'position: absolute;left: 5px;top: 5px;'
+        }
 
     },
     methods:{

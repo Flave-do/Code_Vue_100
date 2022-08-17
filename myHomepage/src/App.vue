@@ -439,7 +439,7 @@ p {
 	
 	/* Inner container width */
 	.inner {
-		width: 470px;
+		width: 540px;
 	}
 	
 	/* Grid width */
