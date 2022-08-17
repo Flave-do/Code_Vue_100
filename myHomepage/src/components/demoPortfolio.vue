@@ -19,10 +19,10 @@
         <!-- Portfolio Lists -->
         <ul id="portfolio-list" class="isotope" :style="portfolioListStyle">
                 <li class="isotope-item" 
-                    :class="imgs.imgClass"
-                    :style="liItemStyle(imgs)"
-                    v-for="(imgs,imgId) in imgDemo.filter(obj => {return obj.imgClass === this.dataFilter})" 
+                    v-for="(imgs,imgId) in dataFilterRom(imgDemo)" 
                     :key="imgId"
+                    :style="liItemStyle(imgId)"
+                    :class="imgs.imgClass"
                 >
                     <CoolLightBox
                         :items="imgs.items" 
@@ -171,6 +171,7 @@ export default {
             // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
             portfolioWidth:0,
+            tabX:0//占位
             // windowWidth: document.documentElement.clientWidth, // 实时屏幕宽度
             // windowHeight: document.documentElement.clientHeight // 实时屏幕高度
         }
@@ -181,27 +182,27 @@ export default {
         },
         liItemStyle(){
             return function(pic){
-                let picId = pic.id
-                let widthX = 155
-                let rowX = parseInt(this.portfolioWidth/widthX)
-                let marginX = (this.portfolioWidth-rowX*widthX)/rowX/2
-                let boxWidth = (widthX + marginX*2)
-                let lefX = 0
-                let topY = 0
-            //     if(this.dataFilter == '*'){
-            //         topY = parseInt(picId/rowX)*230
-            //         lefX = boxWidth*(picId%rowX)
-            //         return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
-            //     }else if(this.dataFilter == pic.imgClass){
-            //         return 'display: inline-block; width: 145px; height: 145px;'
-            //     }else{
-            //         return 'display: none;'
-            //     }
-            // } 
-                topY = parseInt(picId/rowX)*230
-                lefX = boxWidth*(picId%rowX)
-                return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
-            }
+                let picId = pic
+                console.log(picId)
+                // let widthX = 155
+                // let rowX = parseInt(this.portfolioWidth/widthX)
+                // let marginX = (this.portfolioWidth-rowX*widthX)/rowX/2
+                // let boxWidth = (widthX + marginX*2)
+                // let lefX = 0
+                // let topY = 0
+                // if(this.dataFilter == '*'){
+                //     topY = parseInt(picId/rowX)*230
+                //     lefX = boxWidth*(picId%rowX)
+                //     return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
+                // }else if(this.dataFilter == pic.imgClass){
+                //     // 这里需要计算当前显示的个数
+                //     topY = parseInt(this.tabX/rowX)*230
+                //     lefX = boxWidth*(this.tabX%rowX)
+                //     return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
+                // }else{
+                //     return 'display: none;'
+                // }
+            } 
         },
         // imgWrapperStyle(){
         //    // 展示图标框大小
@@ -225,6 +226,15 @@ export default {
                 that.portfolioWidth = that.$refs.portfoliobox.offsetWidth
             })
         },
+        dataFilterRom(data){
+            return data.filter(obj => {
+                if(this.dataFilter === '*'){
+                    return obj
+                }else{
+                   return obj.imgClass === this.dataFilter 
+                }
+            })
+        }
 
     },
 
@@ -268,7 +278,7 @@ export default {
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     background-color: #414141;
     *background-color: #222222;
     background-image: -ms-linear-gradient(top, #555555, #222222);
