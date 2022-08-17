@@ -165,15 +165,7 @@ export default {
     float: left;
     margin: 0 10px;
 }
-/* .one-three{
-    width: 230px;
-}
-.two-three{
-    width: 510px;
-}
-.full-three {
-    width: 760px;
-} */
+
 .photo-frame {
     background: url('~@/assets/images/frame-front.png') no-repeat center center;
     width: 196px;

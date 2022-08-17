@@ -17,7 +17,7 @@
         <!-- End Portfolio Filter -->
 
         <!-- Portfolio Lists -->
-        <ul id="portfolio-list" class="isotope" style="position: relative; overflow: hidden; height: 480px;">
+        <ul id="portfolio-list" class="isotope" :style="portfolioListStyle">
                 <li class="isotope-item" 
                     :class="imgs.imgClass"
                     :style="liItemStyle(imgs)"
@@ -36,7 +36,7 @@
                             :key="imageIndex"
                             @click="index[imgId].index = imageIndex"
                             >
-                            <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt=""/>
+                            <img :src="require('../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle"/>
                         </div>
                     </div>
                 </li>
@@ -168,26 +168,27 @@ export default {
                 //     ]
                 // },
             ],
-            // liItemStyle:'position: absolute; left: 0px; top: 0px; transform: translate(0px);',
+            // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
-            imgGrayscaleStyle:'opacity: 0; position: absolute; left: 5px; top: 5px; z-index: 998;',
-            // imgSrcStyle:'position: absolute; left: 5px; top: 5px;',
-            portfolioWidth:960,
+            // imgSrcStyle:'opacity: 0;position: absolute;left: 5px;top: 5px;z-index: 998;',
+            portfolioWidth:0,
             // windowWidth: document.documentElement.clientWidth, // 实时屏幕宽度
             // windowHeight: document.documentElement.clientHeight // 实时屏幕高度
         }
     },
     computed:{
+        portfolioListStyle(){
+            return "position: relative; overflow: hidden; height: 480px;width:"+this.portfolioWidth+"px;"
+        },
         liItemStyle(){
             return function(pic){
-                // console.log(this.portfolioWidth)
-                let lefx = (pic.id-0)*225
+                let lefx = (pic.id-0)*173
                 let topy = 0
                 if(this.dataFilter == '*'){
-                    topy = parseInt(lefx/this.portfolioWidth)
+                    topy = parseInt((lefx+173)/this.portfolioWidth)
                     lefx = lefx%this.portfolioWidth
                     // console.log('topy',topy,'lefx',lefx,'width',this.portfolioWidth)
-                    return 'position: absolute; left:'+lefx+'px; top: '+topy*200+'px;'
+                    return 'position: absolute; left:'+lefx+'px; top: '+topy*230+'px;'
                 }else if(this.dataFilter == pic.imgClass){
                     return 'display: inline-block; width: 145px; height: 145px;'
                 }else{
@@ -195,15 +196,13 @@ export default {
                 }
             } 
         },
-        // portfolioWidth:{
-        //     get(){
-        //         portfolioWidth = this.$refs.portfoliobox.offsetWidth
-        //         return portfolioWidth
-        //     },
-        //     set(value){
-        //         console(value)
-        //     }
-        // } 
+        // imgWrapperStyle(){
+        //    // 展示图标框大小
+        // }
+        // imgSrcStyle(){
+        //    // img图标大小
+        // }
+
     },
     methods:{
         changeFilter(filter){
@@ -216,7 +215,8 @@ export default {
                 // var domHeight = this.$refs.container.clientHeight // 高
                 that.portfolioWidth = that.$refs.portfoliobox.offsetWidth
             })
-        }
+        },
+
     },
 
     created(){
@@ -304,6 +304,7 @@ export default {
 #portfolio-list {
     display: inline-block;
     text-align: center;
+    /* 图标box宽度 */
     width: 780px;
 }
 #portfolio-list li {
@@ -345,7 +346,7 @@ export default {
      -moz-transition-property:    -moz-transform, opacity;
       -ms-transition-property:     -ms-transform, opacity;
        -o-transition-property:         top, left, opacity;
-          transition-property:         transform, opacity;
+          transition-property:         left, top;
 }
 
 /* disabling Isotope CSS3 transitions */
