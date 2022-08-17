@@ -7,7 +7,7 @@
                 <li v-for="(datas,dataid) in dataFilterList" :key="dataid">
                     <a href="#" 
                         :data-filter="datas.datasFilter" 
-                        @click="changeFilter(datas.dataFilter)"
+                        @click.prevent="changeFilter(datas.dataFilter)"
                         :class="{current:datas.dataFilter == dataFilter}" 
                     >
                     {{datas.title}}</a>
@@ -117,56 +117,56 @@ export default {
                         },
                     ]
                 },
-                // {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:'preview4.png',
-                //             thumb:'preview1.jpg',
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'4',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:'preview5.png',
-                //             thumb:'preview1.jpg',
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'5',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:'preview5.png',
-                //             thumb:'preview1.jpg',
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'6',imgClass:'webdesign',title:'webdesign',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:'preview5.png',
-                //             thumb:'preview1.jpg',
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'7',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:'preview5.png',
-                //             thumb:'preview1.jpg',
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
+                {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview5.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                {id:'4',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview5.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                {id:'5',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview5.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                {id:'6',imgClass:'webdesign',title:'webdesign',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview5.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                {id:'7',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                    items:[
+                        {
+                            src:require('../assets/images/portfolio/preview5.png'),
+                            thumb:require('../assets/images/portfolio/preview5.png'),
+                            title: 'In nature, nothing is perfect and everything is perfect',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
             ],
             // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
