@@ -2,19 +2,23 @@
 <!-- Content -->
     <div id="content" class="inner">
         <!-- Title -->
-        <h1 v-bind:style="{'display':demoTab==='Intro' ? 'block':'none'}">主页</h1>
-        <h1 v-bind:style="{'display':demoTab==='Resume' ? 'block':'none'}">履历</h1>
-        <h1 v-bind:style="{'display':demoTab==='Portfolio' ? 'block':'none'}">作品</h1>
-        <h1 v-bind:style="{'display':demoTab==='Contact' ? 'block':'none'}">联系</h1>
+        <transition-group tag="p" name="tabs">
+            <h1 v-show="showTab('Intro')" key="1">主页</h1>
+            <h1 v-show="demoTab==='Resume'" key="2">履历</h1>
+            <h1 v-show="demoTab==='Portfolio' " key="3">作品</h1>
+            <h1 v-show="demoTab==='Contact'" key="4">联系</h1>
+        </transition-group>
         <!-- End Title -->
         <div id="content-wrapper">
             <div id="content-header"></div> <!-- Content Header -->
             <div id="content-core-wrapper">
                 <div id="content-core">
-                    <demoIntro v-if="demoTab==='Intro'"/>
-                    <demoResume v-if="demoTab==='Resume'"/>
-                    <demoPortfolio v-if="demoTab==='Portfolio'"/>
-                    <demoContact v-if="demoTab==='Contact'"/>
+                    <transition-group tag="p" name="demo">
+                        <demoIntro v-if="demoTab==='Intro'" key="1"/>
+                        <demoResume v-if="demoTab==='Resume'" key="2"/>
+                        <demoPortfolio v-if="demoTab==='Portfolio'" key="3"/>
+                        <demoContact v-if="demoTab==='Contact'" key="4"/>
+                    </transition-group>
                 </div>
             </div>
             <div id="content-footer"></div> <!-- Content Footer -->
@@ -36,6 +40,7 @@ import demoIntro from './demoIntro.vue'
 import demoResume from './demoResume'
 import demoPortfolio from './demoPortfolio'
 import demoContact from './demoContact'
+import 'animate.css'
 export default {
     name: 'demoOverview',
     components: {
@@ -44,11 +49,22 @@ export default {
     data() {
         return {
             demoTab:'Intro',
+            show:'',
         }
     },
     methods:{
         tabCut(id){
-            this.demoTab = id.title
+            let that = this
+            this.demoTab = ''
+            window.setTimeout(function(){
+                that.demoTab = id.title
+            },500);
+            window.clearTimeout()
+        },
+        showTab(tab){
+            if(this.demoTab===tab){
+                return true
+            }
         }
     },
     mounted(){
@@ -123,5 +139,33 @@ export default {
 	position: relative;
 	display: inline-block;
 	margin: 0 2px;
+}
+
+/*初始状态*/
+/* .demo-enter{
+    transition: all 1s ease-out;
+} */
+/*显示过渡*/
+.demo-enter-active{
+    animation:fadeInDownBig;
+    animation-duration: 0.5s; 
+}
+
+.demo-leave-active{
+    animation:fadeOutUp;
+    animation-duration: 0.5s; 
+}
+
+
+/* .tabs-enter{
+    transition: none 1s;
+} */
+/* .tabs-enter-active{
+    animation: fadeIn; 
+    animation-duration: 2s; 
+} */
+.tabs-leave-active{
+    animation: fadeOut;
+    animation-duration: 0.5s; 
 }
 </style>

@@ -185,6 +185,17 @@ export default {
             let heightY = Math.ceil(this.portfolioListHeight*this.imgBoxWidth/this.portfolioWidth)*240
             return "position: relative; overflow: hidden; height: "+heightY+"px;width:"+this.portfolioWidth+"px;"
         },
+        portfolioListHeight(){
+            let len = 0
+            for(var i in this.imgDemo){
+                if(this.dataFilter === '*'){
+                    len ++
+                }else if(this.imgDemo[i].imgClass === this.dataFilter){
+                    len ++
+                }
+            }
+            return len
+        },
         liItemStyle(){
             return function(pic){
                 let rowX = parseInt(this.portfolioWidth/this.imgBoxWidth)
@@ -201,21 +212,11 @@ export default {
         //    // 展示图标框大小
         // }
         imgSrcStyle(){
-           // img图标大小
-        //    position: absolute;left: 5px;top: 5px;
+            // img图标大小
+            //position: absolute;left: 5px;top: 5px;
            return ''
         },
-        portfolioListHeight(){
-            let len = 0
-            for(var i in this.imgDemo){
-                if(this.dataFilter === '*'){
-                    len ++
-                }else if(this.imgDemo[i].imgClass === this.dataFilter){
-                    len ++
-                }
-            }
-            return len
-        }
+        
 
 
     },
