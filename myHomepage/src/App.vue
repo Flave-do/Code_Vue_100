@@ -304,15 +304,9 @@ p {
 		width: 510px;
 	}
 	.full-three {
-		width: 760px;
+		width: 510px;
 	}
-	/* Grid width */
-	.one-three,
-	.two-three,
-	.full-three {
-		width: 676px;
-		margin-bottom: 10px;
-	}
+
 
 	/* Photo frame width */
 	.photo-frame {
@@ -337,8 +331,8 @@ p {
 		width: 656px;
 	}
 	.form-component {
-		padding-bottom: 5px;
-		margin-bottom: 5px;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
 	}	
 }
 
