@@ -171,21 +171,21 @@ export default {
             // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
             portfolioWidth:0,
-            tabX:0//占位
+            imgBoxWidth:155,
             // windowWidth: document.documentElement.clientWidth, // 实时屏幕宽度
             // windowHeight: document.documentElement.clientHeight // 实时屏幕高度
         }
     },
     computed:{
         portfolioListStyle(){
-            return "position: relative; overflow: hidden; height: 480px;width:"+this.portfolioWidth+"px;"
+            let heightY = Math.ceil(this.portfolioListHeight*this.imgBoxWidth/this.portfolioWidth)*240
+            return "position: relative; overflow: hidden; height: "+heightY+"px;width:"+this.portfolioWidth+"px;"
         },
         liItemStyle(){
             return function(pic){
-                let widthX = 155
-                let rowX = parseInt(this.portfolioWidth/widthX)
-                let marginX = (this.portfolioWidth-rowX*widthX)/rowX/2
-                let boxWidth = (widthX + marginX*2)
+                let rowX = parseInt(this.portfolioWidth/this.imgBoxWidth)
+                let marginX = (this.portfolioWidth-rowX*this.imgBoxWidth)/rowX/2
+                let boxWidth = (this.imgBoxWidth + marginX*2)
                 let lefX = 0
                 let topY = 0
                 topY = parseInt(pic/rowX)*230
@@ -200,7 +200,19 @@ export default {
            // img图标大小
         //    position: absolute;left: 5px;top: 5px;
            return ''
+        },
+        portfolioListHeight(){
+            let len = 0
+            for(var i in this.imgDemo){
+                if(this.dataFilter === '*'){
+                    len ++
+                }else if(this.imgDemo[i].imgClass === this.dataFilter){
+                    len ++
+                }
+            }
+            return len
         }
+
 
     },
     methods:{
@@ -224,7 +236,7 @@ export default {
                    return obj.imgClass === that.dataFilter 
                 }
             })
-        }
+        },
 
     },
 
