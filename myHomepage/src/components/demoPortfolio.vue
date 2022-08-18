@@ -18,12 +18,14 @@
 
         <!-- Portfolio Lists -->
         <ul id="portfolio-list" class="isotope" :style="portfolioListStyle">
-                <li class="isotope-item" 
+                <transition-group name="list" tag="p" appear>
+                <li class="isotope-item " 
                     v-for="(imgs,imgId) in dataFilterRom(imgDemo)" 
                     :key="imgId"
                     :style="liItemStyle(imgId)"
                     :class="imgs.imgClass"
                 >
+                
                     <CoolLightBox
                         :items="imgs.items" 
                         :index="index[imgId].index"
@@ -40,6 +42,7 @@
                         </div>
                     </div>
                 </li>
+                </transition-group>
         </ul>
         <!-- End Portfolio Lists -->
 
@@ -51,6 +54,7 @@
 <script>
 import CoolLightBox from 'vue-cool-lightbox'
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
+import 'animate.css'
 export default {
     name:'demoPortfolio',
     components: {CoolLightBox,},
@@ -382,5 +386,13 @@ export default {
 }
 .img_wrapper{
     overflow: hidden
+}
+.list-enter-active{
+    animation: zoomIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+.list-leave-active{
+    animation: zoomOut; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
 }
 </style>
