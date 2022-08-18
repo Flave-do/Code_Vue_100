@@ -19,6 +19,7 @@ export default {
         }
     },
     methods:{
+      //左右、长度
       pipeMover(LorR,site){
         if(LorR){
           this.barLength = this.barLength + site

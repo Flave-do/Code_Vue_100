@@ -56,6 +56,34 @@ export default {
 </script>
 
 <style lang='css' scoped> 
-
+.one-three,
+.two-three,
+.full-three {
+	display: inline;
+	float: left;
+	margin: 0 10px;
+}
+.one-three{
+	width: 230px;
+}
+.two-three{
+	width: 510px;
+}
+.full-three {
+	width: 760px;
+}
+.photo-frame {
+	background: url("~@/assets/images/frame-front.png") no-repeat center center;
+	width: 196px;
+	height: 196px;
+	padding: 16px 17px 47px 17px;
+}
+.group-container{
+	padding-bottom: 15px;
+}
+.separator {
+	background: url("~@/assets/images/separator.png") no-repeat center center;
+	height: 60px;
+}
 
 </style>

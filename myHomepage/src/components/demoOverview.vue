@@ -2,19 +2,19 @@
 <!-- Content -->
     <div id="content" class="inner">
         <!-- Title -->
-        <h1 class="title-active">主页</h1>
-        <h1 style="display:none">履历</h1>
-        <h1 style="display:none">作品</h1>
-        <h1 style="display:none">联系</h1>
+        <h1 v-bind:style="{'display':demoTab==='Intro' ? 'block':'none'}">主页</h1>
+        <h1 v-bind:style="{'display':demoTab==='Resume' ? 'block':'none'}">履历</h1>
+        <h1 v-bind:style="{'display':demoTab==='Portfolio' ? 'block':'none'}">作品</h1>
+        <h1 v-bind:style="{'display':demoTab==='Contact' ? 'block':'none'}">联系</h1>
         <!-- End Title -->
         <div id="content-wrapper">
             <div id="content-header"></div> <!-- Content Header -->
             <div id="content-core-wrapper">
                 <div id="content-core">
-                    <demoIntro v-if="1==2"/>
-                    <demoResume v-if="1==2"/>
-                    <demoPortfolio />
-                    <demoContact v-if="1==2"/>
+                    <demoIntro v-if="demoTab==='Intro'"/>
+                    <demoResume v-if="demoTab==='Resume'"/>
+                    <demoPortfolio v-if="demoTab==='Portfolio'"/>
+                    <demoContact v-if="demoTab==='Contact'"/>
                 </div>
             </div>
             <div id="content-footer"></div> <!-- Content Footer -->
@@ -41,11 +41,19 @@ export default {
     components: {
         demoIntro,demoResume,demoPortfolio,demoContact
     },
-   data() {
-       return {
-        
-       }
-   },
+    data() {
+        return {
+            demoTab:'Intro',
+        }
+    },
+    methods:{
+        tabCut(id){
+            this.demoTab = id.title
+        }
+    },
+    mounted(){
+        this.$bus.$on('tabCut',this.tabCut)
+    }
 }
 
 </script>

@@ -9,7 +9,7 @@
                             :class='mid == TAG ?"menu-active":true'
                         >
                         </div>
-                        <a href="#" class="menu-hover" @click="setTag(mid)">
+                        <a href="#" class="menu-hover" @click="setTag(mu,mid)">
                             {{mu.title}}
                         </a>
                     </li>
@@ -38,7 +38,7 @@ export default {
     },
     components: { barType },
     methods:{
-        setTag(num){
+        setTag(id,num){
             let LorR,site
             if(num > this.TAG){
                 LorR = true
@@ -49,6 +49,7 @@ export default {
             }
             this.TAG = num
             this.$bus.$emit('pipeMover',LorR,site)
+            this.$bus.$emit('tabCut',id)
         }
     },
     computed:{
