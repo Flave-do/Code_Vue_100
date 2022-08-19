@@ -46,6 +46,9 @@ export default {
             }else if(num < this.TAG){
                 LorR = false
                 site = (this.TAG -num)*33.3
+            }else{
+                LorR = true
+                site = 0
             }
             this.TAG = num
             this.$bus.$emit('pipeMover',LorR,site)
