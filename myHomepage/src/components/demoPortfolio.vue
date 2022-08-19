@@ -18,14 +18,13 @@
 
         <!-- Portfolio Lists -->
         <ul id="portfolio-list" class="isotope" :style="portfolioListStyle">
-                <transition-group name="list" tag="p" appear>
+            <transition-group name="list" tag="p" appear>
                 <li class="isotope-item " 
                     v-for="(imgs,imgId) in dataFilterRom(imgDemo)" 
                     :key="imgId"
                     :style="liItemStyle(imgId)"
                     :class="imgs.imgClass"
                 >
-                
                     <CoolLightBox
                         :items="imgs.items" 
                         :index="index[imgId].index"
@@ -42,7 +41,7 @@
                         </div>
                     </div>
                 </li>
-                </transition-group>
+            </transition-group>
         </ul>
         <!-- End Portfolio Lists -->
 
@@ -372,7 +371,7 @@ export default {
      -moz-transition-property:    -moz-transform, opacity;
       -ms-transition-property:     -ms-transform, opacity;
        -o-transition-property:         top, left, opacity;
-          transition-property:         left, top;
+          transition-property:         transform, opacity;
 }
 
 /* disabling Isotope CSS3 transitions */
