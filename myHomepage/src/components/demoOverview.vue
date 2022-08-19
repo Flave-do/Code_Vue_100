@@ -136,13 +136,13 @@ export default {
     }
     
     100%{
-        height:1000px;
+        height:500px;
     }
 }
 
 @keyframes contentCoreLeave{
     0%{
-        height:1000px;
+        height:500px;
     }
     
     100%{
