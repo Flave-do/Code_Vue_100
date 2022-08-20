@@ -1,24 +1,38 @@
 <template>
   <div id="wrapper">
-    <showTabbar/>
-    <demoOverview/>
-    <!-- Footer -->
-    <footBottom/>
-    <!-- This section is for Splash Screen -->
-    <beforeLoaded v-if="1 ==2"/>
+    <beforeLoaded v-if="this.identifierLogin === 1"/>
+    <headerView v-if="this.identifierLogin === 0"/>
+    <toggleView v-if="this.identifierLogin === 0"/>
+    <footerView v-if="this.identifierLogin === 0"/>
   </div>
 </template>
 
 <script>
-import showTabbar from './components/showTabbar'
-import demoOverview from './components/demoOverview'
-import footBottom from './components/footBottom'
 import beforeLoaded from './components/beforeLoaded'
+import headerView from './components/headerView'
+import toggleView from './components/toggleView'
+import footerView from './components/footerView'
 
 export default {
   name: 'App',
   components: {
-    showTabbar,demoOverview,footBottom,beforeLoaded
+    beforeLoaded,headerView,toggleView,footerView
+  },
+  data(){
+    return{
+        identifierLogin:1
+    }
+  },
+  computed:{
+    
+  },
+  methods:{
+    showLogin(){
+        this.identifierLogin = 0
+    }
+  },
+  mounted(){
+    this.timer = setTimeout(this.showLogin,2000)
   }
 }
 </script>
@@ -233,371 +247,371 @@ svg {
 }
 
 body {
-	background:url('~@/assets/images/bg.jpg') repeat;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 12px;
-	color: #575757;
-	overflow-x: hidden;
+    background:url('~@/assets/images/bg.jpg') repeat;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #575757;
+    overflow-x: hidden;
 }
 body,
 #wrapper {
-	position: relative;
-	min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 h1 {
-	font-size: 48px;
-	font-weight: bold;
-	text-align: center;
-	line-height: 100px;
-	color: #272829;
-	text-shadow: 0px 1px 0px #47484a, 0px -1px 0px #131414;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    color: #272829;
+    text-shadow: 0px 1px 0px #47484a, 0px -1px 0px #131414;
 }
 h2 {
-	font-size: 24px;
-	line-height: 40px;
-	color: #373737;
-	font-family: 'Muli', Helvetica, Arial;
-	font-weight: normal;
-	text-shadow: 0px 1px 0px #fff;
-	border-bottom: solid 1px #cecece;
-	margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 40px;
+    color: #373737;
+    font-family: 'Muli', Helvetica, Arial;
+    font-weight: normal;
+    text-shadow: 0px 1px 0px #fff;
+    border-bottom: solid 1px #cecece;
+    margin-bottom: 15px;
 }
 h3 {
-	font-size: 14px;
-	font-family: Helvetica, Arial;
-	font-weight: bold;
-	color: #373737;
-	margin-bottom: 5px;
+    font-size: 14px;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    color: #373737;
+    margin-bottom: 5px;
 }
 h4 {
-	font-size: 12px;
-	font-family: Helvetica, Arial;
-	font-weight: bold;
-	color: #373737;
-	line-height: 14px;
+    font-size: 12px;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    color: #373737;
+    line-height: 14px;
 }
 p {
-	margin-bottom: 10px;
-	line-height: 18px;
+    margin-bottom: 10px;
+    line-height: 18px;
 }
 /* MEDIA QUERY
 ============================== */
 @media only screen and (min-width: 959px){
-	
+    
     /* Preloader setup */
-	#preloader-container {
-		width: 960px;
-	}
-	
-	/* Inner container width */
-	.inner {
-		width: 800px;
-	}
+    #preloader-container {
+        width: 960px;
+    }
+    
+    /* Inner container width */
+    .inner {
+        width: 800px;
+    }
 
-	.one-three{
-		width: 230px;
-	}
-	.two-three{
-		width: 510px;
-	}
-	.full-three {
-		width: 510px;
-	}
+    .one-three{
+        width: 230px;
+    }
+    .two-three{
+        width: 510px;
+    }
+    .full-three {
+        width: 510px;
+    }
 
 
-	/* Photo frame width */
-	.photo-frame {
-		margin: 0 auto;
-	}
-	
-	/* Home */
-	.flex-direction-nav {
-		display: none;
-	}
-	
-	/* Portfolio */
-	#portfolio-list {
-		width: 716px;
-	}
-	#portfolio-list li {
-		margin: 0 35px 40px;
-	}
+    /* Photo frame width */
+    .photo-frame {
+        margin: 0 auto;
+    }
+    
+    /* Home */
+    .flex-direction-nav {
+        display: none;
+    }
+    
+    /* Portfolio */
+    #portfolio-list {
+        width: 716px;
+    }
+    #portfolio-list li {
+        margin: 0 35px 40px;
+    }
 
-	/* Contact */
-	#gmap {
-		width: 656px;
-	}
-	.form-component {
-		padding-bottom: 10px;
-		margin-bottom: 10px;
-	}	
+    /* Contact */
+    #gmap {
+        width: 656px;
+    }
+    .form-component {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }	
 }
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-	
+    
     /* Preloader setup */
-	#preloader-container {
-		width: 716px;
-	}
-	
-	/* Inner container width */
-	.inner {
-		width: 716px;
-	}
-	
-	/* Grid width */
-	.one-three,
-	.two-three,
-	.full-three {
-		width: 676px;
-		margin-bottom: 10px;
-	}
-		
-	/* Photo frame width */
-	.photo-frame {
-		margin: 0 auto;
-	}
-	
-	/* Home */
-	.flex-direction-nav {
-		display: none;
-	}
-	
-	/* Portfolio */
-	#portfolio-list {
-		width: 716px;
-	}
-	#portfolio-list li {
-		margin: 0 35px 40px;
-	}
+    #preloader-container {
+        width: 716px;
+    }
+    
+    /* Inner container width */
+    .inner {
+        width: 716px;
+    }
+    
+    /* Grid width */
+    .one-three,
+    .two-three,
+    .full-three {
+        width: 676px;
+        margin-bottom: 10px;
+    }
+        
+    /* Photo frame width */
+    .photo-frame {
+        margin: 0 auto;
+    }
+    
+    /* Home */
+    .flex-direction-nav {
+        display: none;
+    }
+    
+    /* Portfolio */
+    #portfolio-list {
+        width: 716px;
+    }
+    #portfolio-list li {
+        margin: 0 35px 40px;
+    }
 
-	/* Contact */
-	#gmap {
-		width: 656px;
-	}
-	.form-component {
-		padding-bottom: 5px;
-		margin-bottom: 5px;
-	}	
+    /* Contact */
+    #gmap {
+        width: 656px;
+    }
+    .form-component {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }	
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	
-	/* Common */
-	body {
-		font-size: 11px;
-	}
-	h1 {
-		font-size: 36px;
-		line-height: 60px;
-	}
-	h2 {
-		font-size: 18px;
-		line-height: 30px;
-		margin-bottom: 10px;
-	}
-	h3 {
-		font-size: 12px;
-		line-height: 14px;
-	}
-	
+    
+    /* Common */
+    body {
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+        line-height: 60px;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    
     /* Preloader setup */
-	#preloader-container {
-		width: 470px;
-	}
-	#preloader-title {
-		width: 100%;
-	}
-	
-	/* Menu */
-	#header-inner {
-		height: 100px;
-		width: 384px;
-		margin: 0 auto;
-	}
-	#menu li {
-		width: 96px;
-		padding: 15px 0 0 0;
-	}
-	#menu li div.menu-icon {
-		width: 96px;
-	}
-	#menu-slider {
-		width: 288px;
-	}
-	
-	/* Inner container width */
-	.inner {
-		width: 540px;
-	}
-	
-	/* Grid width */
-	.one-three,
-	.two-three,
-	.full-three {
-		width: 450px;
-		margin: 0 0 10px 0;
-	}
-		
-	/* Photo frame width */
-	.photo-frame {
-		margin: 0 auto;
-	}
-	
-	/* Home */
-	.flex-direction-nav {
-		display: none;
-	}
-	
-	/* Resume */
-	.resume-label {
-		width: 30%;
-		font-size: 12px;
-		float: left;
-	}
-	.resume-info {
-		width: 70%;
-		float: left;
-	}
-	
-	/* Portfolio */
-	#portfolio-list {
-		width: 450px;
-	}
-	#portfolio-list li {
-		margin: 0 9px 30px;
-	}
+    #preloader-container {
+        width: 470px;
+    }
+    #preloader-title {
+        width: 100%;
+    }
+    
+    /* Menu */
+    #header-inner {
+        height: 100px;
+        width: 384px;
+        margin: 0 auto;
+    }
+    #menu li {
+        width: 96px;
+        padding: 15px 0 0 0;
+    }
+    #menu li div.menu-icon {
+        width: 96px;
+    }
+    #menu-slider {
+        width: 288px;
+    }
+    
+    /* Inner container width */
+    .inner {
+        width: 540px;
+    }
+    
+    /* Grid width */
+    .one-three,
+    .two-three,
+    .full-three {
+        width: 450px;
+        margin: 0 0 10px 0;
+    }
+        
+    /* Photo frame width */
+    .photo-frame {
+        margin: 0 auto;
+    }
+    
+    /* Home */
+    .flex-direction-nav {
+        display: none;
+    }
+    
+    /* Resume */
+    .resume-label {
+        width: 30%;
+        font-size: 12px;
+        float: left;
+    }
+    .resume-info {
+        width: 70%;
+        float: left;
+    }
+    
+    /* Portfolio */
+    #portfolio-list {
+        width: 450px;
+    }
+    #portfolio-list li {
+        margin: 0 9px 30px;
+    }
 
-	/* Contact */
-	#gmap {
-		width: 430px;
-		height: 200px;
-	}
-	.form-component {
-		padding-bottom: 5px;
-		margin-bottom: 5px;
-	}	
+    /* Contact */
+    #gmap {
+        width: 430px;
+        height: 200px;
+    }
+    .form-component {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }	
 }
 
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
-	
-	/* Common */
-	body {
-		font-size: 11px;
-	}
-	h1 {
-		font-size: 36px;
-		line-height: 60px;
-	}
-	h2 {
-		font-size: 18px;
-		line-height: 30px;
-		margin-bottom: 10px;
-	}
-	h3 {
-		font-size: 12px;
-		line-height: 14px;
-	}
-	
+    
+    /* Common */
+    body {
+        font-size: 11px;
+    }
+    h1 {
+        font-size: 36px;
+        line-height: 60px;
+    }
+    h2 {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    
     /* Preloader setup */
-	#preloader-container {
-		width: 300px;
-	}
-	#preloader-title {
-		width: 100%;
-		font-size: 11px;
-	}
-	#preloader-title h1 {
-		font-size: 24px;
-	}
-	#jpreLoader{
-		width:300px;
-	}
-	
-	/* Menu */
-	#header-inner {
-		height: 100px;
-		width: 100%;
-	}
-	#menu li {
-		padding: 25px 0 0 0;
-		width: 25%;
-	}
-	#menu li div.menu-icon {
-		width: 100%;
-	}
-	#menu li a.menu-hover {
-		top: 25px;
-	}
-	#menu-slider {
-		display: none;
-	}
-	
-	/* Inner container width */
-	.inner {
-		width: 300px;
-	}
-	
-	/* Grid width */
-	.one-three,
-	.two-three,
-	.full-three {
-		width: 280px;
-		margin: 0 0 10px 0;
-	}
-		
-	/* Photo frame width */
-	.photo-frame {
-		margin: 0 auto;
-	}
-	
-	/* Home */
-	.flex-direction-nav {
-		display: none;
-	}
-	
-	/* Resume */
-	.resume-label {
-		font-size: 12px;
-		float: none;
-	}
-	.resume-info {
-		float: none;
-	}
-	
-	/* Portfolio */
-	#portfolio-list {
-		width: 280px;
-	}
-	#portfolio-list li {
-		margin: 0 62px 40px 63px;
-		background: #fff;
-	}
+    #preloader-container {
+        width: 300px;
+    }
+    #preloader-title {
+        width: 100%;
+        font-size: 11px;
+    }
+    #preloader-title h1 {
+        font-size: 24px;
+    }
+    #jpreLoader{
+        width:300px;
+    }
+    
+    /* Menu */
+    #header-inner {
+        height: 100px;
+        width: 100%;
+    }
+    #menu li {
+        padding: 25px 0 0 0;
+        width: 25%;
+    }
+    #menu li div.menu-icon {
+        width: 100%;
+    }
+    #menu li a.menu-hover {
+        top: 25px;
+    }
+    #menu-slider {
+        display: none;
+    }
+    
+    /* Inner container width */
+    .inner {
+        width: 300px;
+    }
+    
+    /* Grid width */
+    .one-three,
+    .two-three,
+    .full-three {
+        width: 280px;
+        margin: 0 0 10px 0;
+    }
+        
+    /* Photo frame width */
+    .photo-frame {
+        margin: 0 auto;
+    }
+    
+    /* Home */
+    .flex-direction-nav {
+        display: none;
+    }
+    
+    /* Resume */
+    .resume-label {
+        font-size: 12px;
+        float: none;
+    }
+    .resume-info {
+        float: none;
+    }
+    
+    /* Portfolio */
+    #portfolio-list {
+        width: 280px;
+    }
+    #portfolio-list li {
+        margin: 0 62px 40px 63px;
+        background: #fff;
+    }
 
-	/* Contact */
-	#gmap {
-		width: 260px;
-		height: 200px;
-	}
-	.form-component {
-		padding-bottom: 5px;
-		margin-bottom: 5px;
-	}
-	.textfield {
-		width: 270px;
-	}
-	.textarea {
-		width: 270px;
-		height: 100px;
-	}
-	
+    /* Contact */
+    #gmap {
+        width: 260px;
+        height: 200px;
+    }
+    .form-component {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .textfield {
+        width: 270px;
+    }
+    .textarea {
+        width: 270px;
+        height: 100px;
+    }
+    
 }
 
 .clearfix:before,
