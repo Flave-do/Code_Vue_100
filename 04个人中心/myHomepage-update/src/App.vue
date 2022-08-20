@@ -27,12 +27,12 @@ export default {
     
   },
   methods:{
-    showLogin(){
+    isShow(){
         this.identifierLogin = 0
     }
   },
   mounted(){
-    this.timer = setTimeout(this.showLogin,2000)
+    this.timer = setTimeout(this.isShow,2000)
   }
 }
 </script>
