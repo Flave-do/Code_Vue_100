@@ -21,7 +21,7 @@
                 </div>
                 <div class="resume-group">
                     <div class="resume-label">Address</div>
-                    <div class="resume-info">暂定
+                    <div class="resume-info">湖南省长沙市
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="resume-group">
                     <div class="resume-label">Phone</div>
-                    <div class="resume-info">+86 191 5966 6503</div>
+                    <div class="resume-info">+86 13055026503</div>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -44,7 +44,17 @@
                     <div class="resume-info">
                         <div class="resume-bar">
                             <div class="slider-bg bg-grey"></div> <!-- Slider Background -->
-                            <div class="slider-bar color-bar level8"></div> <!-- Slider Bar -->
+                            <div class="slider-bar color-bar level6"></div> <!-- Slider Bar -->
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="resume-group">
+                    <div class="resume-label">Vue2.0</div>
+                    <div class="resume-info">
+                        <div class="resume-bar">
+                            <div class="slider-bg bg-grey"></div> <!-- Slider Background -->
+                            <div class="slider-bar color-bar level9"></div> <!-- Slider Bar -->
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -54,23 +64,33 @@
                     <div class="resume-info">
                         <div class="resume-bar">
                             <div class="slider-bg bg-grey"></div> <!-- Slider Background -->
+                            <div class="slider-bar color-bar level9"></div> <!-- Slider Bar -->
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="resume-group">
+                    <div class="resume-label">Django</div>
+                    <div class="resume-info">
+                        <div class="resume-bar">
+                            <div class="slider-bg bg-grey"></div> <!-- Slider Background -->
                             <div class="slider-bar color-bar level8"></div> <!-- Slider Bar -->
                         </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="resume-group">
-                    <div class="resume-label">Node.js</div>
+                    <div class="resume-label">Python</div>
                     <div class="resume-info">
                         <div class="resume-bar">
                             <div class="slider-bg bg-grey"></div> <!-- Slider Background -->
-                            <div class="slider-bar color-bar level6"></div> <!-- Slider Bar -->
+                            <div class="slider-bar color-bar level9"></div> <!-- Slider Bar -->
                         </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="resume-group">
-                    <div class="resume-label">python</div>
+                    <div class="resume-label">Linux</div>
                     <div class="resume-info">
                         <div class="resume-bar">
                             <div class="slider-bg bg-grey"></div> <!-- Slider Background -->
@@ -88,13 +108,10 @@
                 <h2>教育程度</h2>
                 <div class="resume-group">
                     <h3>广西科技大学, 2015-2019</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
-                        nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
-                        quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
-                        facilisis turpis, ut sodales quam lectus eu felis. Pellentesque justo magna,
-                        tincidunt vel dignissim nec, tincidunt id nisi. Maecenas varius quam at ante
-                        laoreet quis semper ante egestas. In et velit dui. Sed porttitor condimentum
-                        rhoncus. </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;毕业于广西科技大学,在校期间担任学习委员的职务,辅助各科任老师处理好班级事务,具体主要包括班级入党
+                        人员的申报,学习材料的审核,优秀学生的申报及材料审核,期末的学生的学习总结的收集与综合评分等。<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课程学习了电气、信息、电路等方面知识,包括matlab、Linux、PLC、电路基础、CAD制图以及protues仿真等学习项目。
+                    </p>
                 </div>
             </div>
         </div>
@@ -104,34 +121,33 @@
                 <h2>工作经历</h2>
                 <div class="resume-group">
                     <h3>技研新阳有限公司, 2019 - 2020</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
-                        nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
-                        quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
-                        facilisis turpis, ut sodales quam lectus eu felis. Pellentesque justo magna,
-                        tincidunt vel dignissim nec, tincidunt id nisi. Maecenas varius quam at ante
-                        laoreet quis semper ante egestas. In et velit dui. Sed porttitor condimentum
-                        rhoncus. </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;在技研新阳有限公司担任技术员职务,主要负责生产线上仪器的正常运转,及时处理仪器异常。<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong>主要工作经历:</strong><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、实习期间记录每天的学习经历,每周整理学习总结。在整理的过程中会将一些注意事项和发现的问题记录下来,以便于后来的同事进行借鉴;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、观察观摩学习并提出改进设想,对工艺流程经行深入的理解;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、在发现仪器问题后举一反三思考问题出现的原因并改进。
+                    </p>
                 </div>
 
                 <div class="resume-group">
                     <h3>百分教育有限公司, 2020 - 2021</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
-                        nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
-                        quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
-                        facilisis turpis, ut sodales quam lectus eu felis. Pellentesque justo magna,
-                        tincidunt vel dignissim nec, tincidunt id nisi. Maecenas varius quam at ante
-                        laoreet quis semper ante egestas. In et velit dui. Sed porttitor condimentum
-                        rhoncus. </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;在广东省百分教育集团教学部负责初高中物理和初中数学辅导老师<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong>主要工作经历:</strong><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、实习培训,经行为期一周的教学培训与考核;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、提前备课负责学生学习进度跟进,与家长保持有效沟通;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、跟进学生在校情况制定对应的学习计划,对学生的学习状态保持跟进并定期分析总结,促进家长续费并主动电话潜在客户为机构寻找新生源;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、疫情期间的网络授课。
+                    </p>
                 </div>
                 <div class="resume-group">
                     <h3>安徽恒信检验检测有限公司, 2021 - NOW</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
-                        nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
-                        quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
-                        facilisis turpis, ut sodales quam lectus eu felis. Pellentesque justo magna,
-                        tincidunt vel dignissim nec, tincidunt id nisi. Maecenas varius quam at ante
-                        laoreet quis semper ante egestas. In et velit dui. Sed porttitor condimentum
-                        rhoncus. </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;在安徽省恒信检验检测有限公司担任检测员,主要负责仪器的检测与校准<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong>主要工作经历:</strong><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、实习期间学习了各行业的检测标准,以及加深对计量的认识;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、熟练常用的计量检定规程使用,优化计量检定操作流程;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、整理系统报告模板,修改模板和使用各种函数以简化操作和计算;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、在各单位现场对仪器进行校准和检测,及时采集数据并录入系统。
+                    </p>
                 </div>
             </div>
         </div>

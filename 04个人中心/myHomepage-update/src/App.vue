@@ -318,7 +318,7 @@ p {
         width: 510px;
     }
     .full-three {
-        width: 510px;
+        width: 759px;
     }
 
 
