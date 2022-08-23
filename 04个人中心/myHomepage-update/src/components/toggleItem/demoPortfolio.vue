@@ -72,104 +72,57 @@ export default {
             ],
             dataFilterList:[
                 {id:'0','dataFilter':'*',title:'所有'},
-                {id:'1','dataFilter':'animation',title:'项目一'},
-                {id:'2','dataFilter':'photography',title:'项目二'},
+                {id:'1','dataFilter':'HxWebdesign',title:'项目一'},
+                {id:'2','dataFilter':'GitProgram',title:'项目二'},
                 {id:'3','dataFilter':'webdesign',title:'项目三'},
                 {id:'4','dataFilter':'printdesign',title:'项目四'},
             ],
             imgDemo:[
-                {id:'0',imgClass:'photography',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
+                {id:'0',imgClass:'HxWebdesign',title:'HxWebdesign',imgSrc:'HomePageHx.png',
                     items:[
                         {
-                            src:require('../../assets/images/portfolio/preview1.jpg'),
-                            thumb:require('../../assets/images/portfolio/preview2.png'),
-                            title: 'In nature, nothing is perfect and everything is perfect',
-                            description: "Photo by Lucas",
+                            src:require('../../assets/images/portfolio/HomePageHx.png'),
+                            thumb:require('../../assets/images/portfolio/HomePageHx.png'),
+                            title: '利用vue框架布局的一个公司首页',
+                            description: "Photo by Yang",
                         },
                         {
-                            src:require('../../assets/images/portfolio/preview2.png'),
-                            thumb:require('../../assets/images/portfolio/preview3.png'),
-                            title: 'In nature, nothing is perfect and everything is perfect',
+                            src:require('../../assets/images/portfolio/HomePageHx.png'),
+                            thumb:require('../../assets/images/portfolio/HomePageHx.png'),
+                            title: '其他页面路由还未完成',
                             description: "Photo by Lucas",
                         },
                     ]
                 },
-                // {id:'1',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview2.png'),
-                //             thumb:require('../assets/images/portfolio/preview3.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //         {
-                //             src:require('../assets/images/portfolio/preview4.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'2',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'3',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'4',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'5',imgClass:'animation',title:'animation',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'6',imgClass:'webdesign',title:'webdesign',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
-                // {id:'7',imgClass:'printdesign',title:'photography',grayscaleSrc:'FishC.png',imgSrc:'FishC.png',
-                //     items:[
-                //         {
-                //             src:require('../assets/images/portfolio/preview5.png'),
-                //             thumb:require('../assets/images/portfolio/preview5.png'),
-                //             title: 'In nature, nothing is perfect and everything is perfect',
-                //             description: "Photo by Lucas",
-                //         },
-                //     ]
-                // },
+                {id:'1',imgClass:'GitProgram',title:'GitProgram',imgSrc:'MyGithub.png',
+                    items:[
+                        {
+                            src:require('../../assets/images/portfolio/MyGithub.png'),
+                            thumb:require('../../assets/images/portfolio/MyGithub.png'),
+                            title: '我的git仓库主页',
+                            description: "Photo by Lucas",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/githubDjangoHx.png'),
+                            thumb:require('../../assets/images/portfolio/githubDjangoHx.png'),
+                            title: 'Django-Hx公司学习代码备份',
+                            description: "Photo by Lucas",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/githubDjangoMeiduo.png'),
+                            thumb:require('../../assets/images/portfolio/githubDjangoMeiduo.png'),
+                            title: 'Django-meiduo商城代码备份',
+                            description: "Photo by Lucas",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/githubDjangoStart.png'),
+                            thumb:require('../../assets/images/portfolio/githubDjangoStart.png'),
+                            title: 'Django-学习资料',
+                            description: "Photo by Lucas",
+                        },
+                    ]
+                },
+                
             ],
             // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
@@ -394,5 +347,9 @@ export default {
 .list-leave-active{
     animation: zoomOut; /* referring directly to the animation's @keyframe declaration */
     animation-duration: 2s; /* don't forget to set a duration! */
+}
+#portfolio-list img{
+    /* width: 145px; */
+    height: 145px;
 }
 </style>

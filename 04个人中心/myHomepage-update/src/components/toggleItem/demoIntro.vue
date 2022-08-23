@@ -11,22 +11,28 @@
 
         <div class="one-three">
             <div class="photo-frame">
-                <img src="~@/assets/images/photos/sfan.png" alt="Photo of me"/>
+                <img src="~@/assets/images/photos/cool.jpg" alt="Photo of me"/>
             </div>
         </div>
         <div class="two-three">
             <h2>在下,杨舍凡</h2>
-            <p>编程5min，吹水2h。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra porta dictum.
-                Nullam sem quam, ultrices semper congue eu, placerat ac quam. Pellentesque tempor nisi
-                eu turpis feugiat ornare. Nullam risus enim, eleifend non imperdiet vel, fermentum quis
-                tellus. Nulla pretium orci nec metus lobortis non convallis sem porta. Praesent
-                hendrerit adipiscing mauris vitae sodales. Proin eget risus in velit blandit rhoncus
-                imperdiet at mi. Sed eleifend, augue et tincidunt condimentum, massa tellus hendrerit
-                odio, vel vehicula leo ligula sed lorem. Quisque adipiscing, enim vel iaculis venenatis,
-                velit leo viverra tellus, ac sagittis neque velit in sem. Sed elementum tincidunt velit,
-                ac gravida magna aliquam ac. Sed viverra mollis nisl, at ullamcorper mauris condimentum
-                vel. Vestibulum nisl mi, lacinia rhoncus congue sit amet, convallis eget quam.
-                Vestibulum interdum imperdiet justo laoreet tempor. </p>
+            <p>我走在鼓楼下面&nbsp;&nbsp;路在堵着<br/>
+                雨后的阳光散落&nbsp;&nbsp;人们都出来了<br/>
+                执着的迷惘的文艺青年很多<br/>
+                如果我无聊了就会来这里坐坐<br/>
+                我是个沉默不语的靠着墙壁晒太阳的过客<br/>
+                如果我有些倦意了&nbsp;&nbsp;就让我在这里独自醒过<br/>
+                我站在鼓楼上面&nbsp;&nbsp;一切繁华与我无关<br/>
+                这是个拥挤的地方&nbsp;&nbsp;而我却很平凡<br/>
+                我走在鼓楼下面&nbsp;&nbsp;淋湿的咖啡馆<br/>
+                睡不着的后海边&nbsp;&nbsp;月亮还在抽着烟<br/>
+                喝醉的亲吻着&nbsp;&nbsp;快活的人不眠<br/>
+                唯有我倚着围栏&nbsp;&nbsp;对过往说晚安<br/>
+                我是个沉默不语的靠着车窗想念你的乘客<br/>
+                当107路再次经过&nbsp;&nbsp;时间是带走青春的电车<br/>
+                我站在什刹海边一切甜蜜与我无关<br/>
+                这是个拥挤的地方&nbsp;&nbsp;而我却很孤单<br/>
+            </p>
         </div>
 
         <div class="clearfix"></div>

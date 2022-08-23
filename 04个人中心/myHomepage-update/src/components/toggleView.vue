@@ -26,11 +26,16 @@
         <!-- Social Media -->
         <div id="socmed">
             <ul id="socmed-list">
-                <li><a href="http://bbs.fishc.com" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/facebook.png" alt="Facebook"/></a></li>
-                <li><a href="http://bbs.fishc.com" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/twitter.png" alt="Twitter"/></a></li>
-                <li><a href="http://bbs.fishc.com" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/weixin.png" alt="Skype"/></a></li>
+                <li><a href="#" target="_parent" style="opacity: 0.7;"><img src="~@/assets/images/social/facebook.png" alt="Facebook"/></a></li>
+                <li><a href="#" target="_parent" style="opacity: 0.7;"><img src="~@/assets/images/social/twitter.png" alt="Twitter"/></a></li>
+                <li><a @click.prevent="showWeChat" href="" target="_blank" style="opacity: 0.7;"><img src="~@/assets/images/social/weixin.png" alt="WeChat"/></a></li>
             </ul>
         </div>
+
+        <div class="callMe" v-show="showCallMe">
+            <img src="../assets/images/CallMe/MyWeChat.png" alt="">
+        </div>
+
     </div>
 </template>
 
@@ -49,6 +54,7 @@ export default {
         return {
             demoTab:'Intro',
             isShowClass:'content-core-enter',
+            showCallMe:0,
         }
     },
     computed:{
@@ -70,6 +76,9 @@ export default {
                 return true
             }
         },
+        showWeChat(){
+            this.showCallMe = !this.showCallMe
+        }
     },
     mounted(){
         this.$bus.$on('tabCut',this.tabCut)
@@ -195,4 +204,9 @@ h1{
     animation-duration: 0.5s; 
 }
 
+.callMe{
+    position: relative;
+    top: -600px;
+    left: 101px;
+}
 </style>

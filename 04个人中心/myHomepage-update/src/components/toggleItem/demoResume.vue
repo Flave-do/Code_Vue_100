@@ -3,7 +3,7 @@
     <div id="resume" class="content-list">
         <div class="one-three">
             <div class="photo-frame">
-                <img src="~@/assets/images/photos/sfan.png" alt="Photo of me"/>
+                <img src="~@/assets/images/photos/bf.jpg" alt="Photo of me"/>
             </div>
         </div>
         <div class="two-three">
