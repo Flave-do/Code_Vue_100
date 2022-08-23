@@ -80,6 +80,12 @@ export default {
 </script>
 
 <style lang='css' scoped> 
+h1{
+    position: relative;
+}
+p{
+    height: 100px;
+}
 #content {
     padding-top: 120px;
     padding-bottom: 100px;
