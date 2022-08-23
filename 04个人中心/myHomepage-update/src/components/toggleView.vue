@@ -2,7 +2,7 @@
 <!-- Content -->
     <div id="content" class="inner">
         <!-- Title -->
-        <transition-group tag="p" name="tabs">
+        <transition-group tag="p" class="tabs" name="tabs">
             <h1 v-show="showTab('Intro')" key="1">主页</h1>
             <h1 v-show="demoTab==='Resume'" key="2">履历</h1>
             <h1 v-show="demoTab==='Portfolio' " key="3">作品</h1>
@@ -13,10 +13,10 @@
             <div id="content-header"></div> <!-- Content Header -->
             <div id="content-core-wrapper" ref="contentCore" style="height:auto;">
                 <div id="content-core" :class="isShowClass">
-                        <demoIntro v-if="demoTab==='Intro'" key="1"/>
-                        <demoResume v-if="demoTab==='Resume'" key="2"/>
-                        <demoPortfolio v-if="demoTab==='Portfolio'" key="3"/>
-                        <demoContact v-if="demoTab==='Contact'" key="4"/>
+                    <demoIntro v-if="demoTab==='Intro'" key="1"/>
+                    <demoResume v-if="demoTab==='Resume'" key="2"/>
+                    <demoPortfolio v-if="demoTab==='Portfolio'" key="3"/>
+                    <demoContact v-if="demoTab==='Contact'" key="4"/>
                 </div>
 
             </div>
@@ -56,9 +56,9 @@ export default {
     },
     methods:{
         tabCut(item){
-            let that = this
-            this.demoTab = ''
+            const that = this
             this.isShowClass = 'content-core-leave'
+            this.demoTab = ''
             window.setTimeout(function(){
                 that.demoTab = item.title
                 that.isShowClass = 'content-core-enter'
@@ -83,7 +83,7 @@ export default {
 h1{
     position: relative;
 }
-p{
+#content .tabs{
     height: 100px;
 }
 #content {
@@ -194,4 +194,5 @@ p{
     animation: fadeOut;
     animation-duration: 0.5s; 
 }
+
 </style>
