@@ -74,7 +74,20 @@ export default {
     -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.70);
         -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.70);
             box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.70);
+
+    animation: headerLeave 0.5s ease-in-out;
+    overflow: hidden;
 }
+@keyframes headerLeave{
+    0%{
+        height:0px;
+    }
+    
+    100%{
+        height:100px;
+    }
+}
+
 #header-inner {
     height: 100px;
     width: 544px;

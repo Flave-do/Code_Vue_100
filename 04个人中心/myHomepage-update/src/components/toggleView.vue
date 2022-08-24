@@ -1,6 +1,6 @@
 <template>
 <!-- Content -->
-    <div id="content" class="inner">
+    <div id="content" class="inner" :class=" firstPresentation">
         <!-- Title -->
         <transition-group tag="p" class="tabs" name="tabs">
             <h1 v-show="showTab('Intro')" key="1">主页</h1>
@@ -53,6 +53,7 @@ export default {
     data() {
         return {
             demoTab:'Intro',
+            firstPresentation:'',
             isShowClass:'content-core-enter',
             showCallMe:0,
         }
@@ -82,6 +83,7 @@ export default {
     },
     mounted(){
         this.$bus.$on('tabCut',this.tabCut)
+        this.firstPresentation = 'content-show-enter'
     },
 
 }
@@ -138,7 +140,10 @@ h1{
     /* transition: height 0.5s ease-in-out; */
     
 }
-
+.content-show-enter{
+    animation: fadeIn;
+    animation-duration: 0.5s; 
+}
 .content-core-enter {
     animation: contentCoreEnter 1s ease-in-out;
 }

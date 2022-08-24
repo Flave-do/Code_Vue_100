@@ -51,7 +51,7 @@
             <h3>Email</h3>
             <p>308726757@qq.com</p>
             <h3>主页</h3>
-            <p>www.sfan.com</p>
+            <p>www.yydysf.com</p>
         </div>
 
         <div class="clearfix"></div>

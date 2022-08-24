@@ -111,13 +111,13 @@ export default {
     background-repeat: repeat-x;
     background-position: left top;
     width: 0%;
-    height: 28px;
+    height: 14px;
     z-index: 11;
     transition-property: width;
     transition-duration: 0.5s;
-    -webkit-border-radius: 4px;
-        -box-border-radius: 4px;
-            border-radius: 4px;
+    -webkit-border-radius: 10px;
+        -box-border-radius: 10px;
+            border-radius: 10px;
     -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
         -box-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
             box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.75), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);

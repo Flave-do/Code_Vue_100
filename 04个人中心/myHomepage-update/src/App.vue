@@ -12,6 +12,7 @@ import beforeLoaded from './components/beforeLoaded'
 import headerView from './components/headerView'
 import toggleView from './components/toggleView'
 import footerView from './components/footerView'
+import 'animate.css'
 
 export default {
   name: 'App',
