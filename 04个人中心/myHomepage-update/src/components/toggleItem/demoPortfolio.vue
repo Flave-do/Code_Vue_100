@@ -21,7 +21,7 @@
             <transition-group name="list" tag="p" appear>
                 <li class="isotope-item " 
                     v-for="(imgs,imgId) in dataFilterRom(imgDemo)" 
-                    :key="imgId"
+                    :key="imgs.id"
                     :style="liItemStyle(imgId)"
                     :class="imgs.imgClass"
                 >
@@ -34,7 +34,7 @@
                     <div class="img_wrapper" :style="imgWrapperStyle">
                         <div class="image"
                             v-for="(image,imageIndex) in imgs.items"
-                            :key="imageIndex"
+                            :key="image.id"
                             @click="index[imgId].index = imageIndex"
                             >
                             <img :src="require('../../assets/images/portfolio/'+imgs.imgSrc)" alt="" :style="imgSrcStyle"/>
