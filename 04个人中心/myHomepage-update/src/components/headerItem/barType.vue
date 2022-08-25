@@ -48,17 +48,6 @@ export default {
 </script>
 
 <style lang='css' scoped> 
-#menu-slider {
-    padding-top: 70px;
-    width: 408px;
-    margin: 0 auto;
-}
-#menu-slider-container {
-    height: 8px;
-    margin: 0 auto;
-    position: relative;
-}
-
 /* Bar */
 .slider-bg {
     position: absolute;
@@ -113,11 +102,6 @@ export default {
     transition-duration: 0.5s;
 }
 
-#menu-slider {
-    padding-top: 70px;
-    width: 408px;
-    margin: 0 auto;
-}
 #menu-slider-container {
     height: 8px;
     margin: 0 auto;

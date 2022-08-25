@@ -88,23 +88,9 @@ export default {
     }
 }
 
-#header-inner {
-    height: 100px;
-    width: 544px;
-    margin: 0 auto;
-}
-
 /* Menu */
-#menu li {
-    float: left;
-    padding: 15px 18px 0 18px;
-    position: relative;
-    width: 100px;
-    height: 45px;
-}
 #menu li div.menu-icon {
     display: block;
-    width: 100px;
     height: 45px;
     background-image:url('~@/assets/images/bg-menu.png');
     background-repeat: no-repeat;
@@ -164,6 +150,10 @@ div#menu-portfolio.menu-active {
 }
 div#menu-contact.menu-active {
     background-position: -400px bottom;
+}
+#menu-slider {
+    padding-top: 70px;
+    margin: 0 auto;
 }
 
 </style>

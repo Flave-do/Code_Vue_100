@@ -36,7 +36,6 @@ export default {
 }
 .inner {
 	margin: 0 auto;
-	width: 800px;
 }
 
 </style>
