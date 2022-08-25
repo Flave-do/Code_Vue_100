@@ -69,60 +69,165 @@ export default {
                 {index:'null',},
                 {index:'null',},
                 {index:'null',},
+                {index:'null',},
+                {index:'null',},
             ],
             dataFilterList:[
                 {id:'0','dataFilter':'*',title:'所有'},
-                {id:'1','dataFilter':'HxWebdesign',title:'项目一'},
+                {id:'1','dataFilter':'VueHxWebdesign',title:'项目一'},
                 {id:'2','dataFilter':'GitProgram',title:'项目二'},
-                {id:'3','dataFilter':'webdesign',title:'项目三'},
-                {id:'4','dataFilter':'printdesign',title:'项目四'},
+                {id:'3','dataFilter':'SpiderVideo',title:'项目三'},
+                {id:'4','dataFilter':'DjangoHxWebdesign',title:'项目四'},
+                // {id:'5','dataFilter':'knowledgeHierarchy',title:'知识体系'},
             ],
             imgDemo:[
-                {id:'0',imgClass:'HxWebdesign',title:'HxWebdesign',imgSrc:'HomePageHx.png',
+                {id:'0',imgClass:'VueHxWebdesign',title:'VueHxWebdesign',imgSrc:'Vue/HomePageHx.png',
                     items:[
                         {
-                            src:require('../../assets/images/portfolio/HomePageHx.png'),
-                            thumb:require('../../assets/images/portfolio/HomePageHx.png'),
-                            title: '利用vue框架布局的一个公司首页',
+                            src:require('../../assets/images/portfolio/Vue/HomePageHx.png'),
+                            thumb:require('../../assets/images/portfolio/Vue/HomePageHx.png'),
+                            title: '基于vue框架布局的一个公司首页',
                             description: "Photo by Yang",
                         },
                         {
-                            src:require('../../assets/images/portfolio/HomePageHx.png'),
-                            thumb:require('../../assets/images/portfolio/HomePageHx.png'),
-                            title: '其他页面路由还未完成',
-                            description: "Photo by Lucas",
+                            src:require('../../assets/images/portfolio/Vue/HomePageHx.png'),
+                            thumb:require('../../assets/images/portfolio/Vue/HomePageHx.png'),
+                            title: '其他页面路由尚未完成转换',
+                            description: "Photo by Yang",
                         },
                     ]
                 },
-                {id:'1',imgClass:'GitProgram',title:'GitProgram',imgSrc:'MyGithub.png',
+                {id:'1',imgClass:'GitProgram',title:'GitProgram',imgSrc:'Github/MyGithub.png',
                     items:[
                         {
-                            src:require('../../assets/images/portfolio/MyGithub.png'),
-                            thumb:require('../../assets/images/portfolio/MyGithub.png'),
+                            src:require('../../assets/images/portfolio/Github/MyGithub.png'),
+                            thumb:require('../../assets/images/portfolio/Github/MyGithub.png'),
                             title: '我的git仓库主页',
-                            description: "Photo by Lucas",
+                            description: "Photo by Yang",
                         },
                         {
-                            src:require('../../assets/images/portfolio/githubDjangoHx.png'),
-                            thumb:require('../../assets/images/portfolio/githubDjangoHx.png'),
+                            src:require('../../assets/images/portfolio/Github/githubDjangoHx.png'),
+                            thumb:require('../../assets/images/portfolio/Github/githubDjangoHx.png'),
                             title: 'Django-Hx公司学习代码备份',
-                            description: "Photo by Lucas",
+                            description: "Photo by Yang",
                         },
                         {
-                            src:require('../../assets/images/portfolio/githubDjangoMeiduo.png'),
-                            thumb:require('../../assets/images/portfolio/githubDjangoMeiduo.png'),
+                            src:require('../../assets/images/portfolio/Github/githubDjangoMeiduo.png'),
+                            thumb:require('../../assets/images/portfolio/Github/githubDjangoMeiduo.png'),
                             title: 'Django-meiduo商城代码备份',
-                            description: "Photo by Lucas",
+                            description: "Photo by Yang",
                         },
                         {
-                            src:require('../../assets/images/portfolio/githubDjangoStart.png'),
-                            thumb:require('../../assets/images/portfolio/githubDjangoStart.png'),
+                            src:require('../../assets/images/portfolio/Github/githubDjangoStart.png'),
+                            thumb:require('../../assets/images/portfolio/Github/githubDjangoStart.png'),
                             title: 'Django-学习资料',
-                            description: "Photo by Lucas",
+                            description: "Photo by Yang",
                         },
                     ]
                 },
-                
+                {id:'2',imgClass:'SpiderVideo',title:'SpiderVideo',imgSrc:'Spider/VideoCrawler8.png',
+                    items:[
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler1.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler1.png'),
+                            title: '开始页,可选择多个视频渠道',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler2.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler2.png'),
+                            title: '可进行视频搜索',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler3.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler3.png'),
+                            title: '输入视频地址后请稍等一会',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler4.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler4.png'),
+                            title: '此处返回状态码和获取的文件名方便确认资源是否正确',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler5.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler5.png'),
+                            title: '下载后台可视化,请等待',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler6.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler6.png'),
+                            title: '成功后会返回提示',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler7.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler7.png'),
+                            title: '下载控制台可视化,请等待',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawler8.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawler8.png'),
+                            title: '下载到本地了,开始播放吧~',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawlerCode.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawlerCode.png'),
+                            title: '部分源代码1',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Spider/VideoCrawlerCode2.png'),
+                            thumb:require('../../assets/images/portfolio/Spider/VideoCrawlerCode2.png'),
+                            title: '部分源代码2',
+                            description: "Photo by Yang",
+                        },
+                    ]
+                },
+                {id:'3',imgClass:'DjangoHxWebdesign',title:'DjangoHxWebdesign',imgSrc:'Django/ubtunHxPage.png',
+                    items:[
+                        {
+                            src:require('../../assets/images/portfolio/Django/ubtunHxPage.png'),
+                            thumb:require('../../assets/images/portfolio/Django/ubtunHxPage.png'),
+                            title: '基于Django设计的首页展示',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Django/ubtunHxMessage.png'),
+                            thumb:require('../../assets/images/portfolio/Django/ubtunHxMessage.png'),
+                            title: '留言系统,保存到数据库并展示在页面',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Django/ubtunHxInterflow.png'),
+                            thumb:require('../../assets/images/portfolio/Django/ubtunHxInterflow.png'),
+                            title: '展示留言到页面,个人设计模式未设置验证和屏蔽',
+                            description: "Photo by Yang",
+                        },
+                        {
+                            src:require('../../assets/images/portfolio/Django/ubtunHxCode.png'),
+                            thumb:require('../../assets/images/portfolio/Django/ubtunHxCode.png'),
+                            title: '部分代码',
+                            description: "Photo by Yang",
+                        },
+                    ]
+                },
+                // {id:'4',imgClass:'knowledgeHierarchy',title:'knowledgeHierarchy',imgSrc:'knowledgeHierarchy/vue学习笔记.png',
+                //     items:[
+                //         {
+                //             src:require('../../assets/images/portfolio/knowledgeHierarchy/vue学习笔记.png'),
+                //             thumb:require('../../assets/images/portfolio/knowledgeHierarchy/vue学习笔记.png'),
+                //             title: '学习笔记',
+                //             description: "Photo by Yang",
+                //         },
+                        
+                //     ]
+                // },
             ],
             // portfolioListStyle:"position: relative; overflow: hidden; height: 480px;",
             imgWrapperStyle:'display: inline-block; width: 145px; height: 145px;',
@@ -214,7 +319,9 @@ export default {
 .content-list {
   zoom: 1;
 }
-
+h6{
+    text-shadow: 0;
+}
 /* Portfolio */
 #portfolio-filter-container {
     text-align: center;
