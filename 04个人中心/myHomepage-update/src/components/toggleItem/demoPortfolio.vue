@@ -74,10 +74,10 @@ export default {
             ],
             dataFilterList:[
                 {id:'0','dataFilter':'*',title:'所有'},
-                {id:'1','dataFilter':'VueHxWebdesign',title:'项目一'},
-                {id:'2','dataFilter':'GitProgram',title:'项目二'},
-                {id:'3','dataFilter':'SpiderVideo',title:'项目三'},
-                {id:'4','dataFilter':'DjangoHxWebdesign',title:'项目四'},
+                {id:'1','dataFilter':'VueHxWebdesign',title:'Vue'},
+                {id:'2','dataFilter':'GitProgram',title:'MyGithub'},
+                {id:'3','dataFilter':'SpiderVideo',title:'Spider'},
+                {id:'4','dataFilter':'DjangoHxWebdesign',title:'Django'},
                 // {id:'5','dataFilter':'knowledgeHierarchy',title:'知识体系'},
             ],
             imgDemo:[
@@ -90,8 +90,8 @@ export default {
                             description: "Photo by Yang",
                         },
                         {
-                            src:require('../../assets/images/portfolio/Vue/HomePageHx.png'),
-                            thumb:require('../../assets/images/portfolio/Vue/HomePageHx.png'),
+                            src:require('../../assets/images/portfolio/Vue/HomePageHxCode.png'),
+                            thumb:require('../../assets/images/portfolio/Vue/HomePageHxCode.png'),
                             title: '其他页面路由尚未完成转换',
                             description: "Photo by Yang",
                         },
@@ -239,10 +239,10 @@ export default {
     },
     computed:{
         portfolioListStyle(){
-            let heightY = Math.ceil(this.portfolioListHeight*this.imgBoxWidth/this.portfolioWidth)*240
+            let heightY = Math.ceil(this.portfolioListNumber*this.imgBoxWidth/this.portfolioWidth)*240
             return "position: relative; overflow: hidden; height: "+heightY+"px;width:"+this.portfolioWidth+"px;"
         },
-        portfolioListHeight(){
+        portfolioListNumber(){
             let len = 0
             for(var i in this.imgDemo){
                 if(this.dataFilter === '*'){
@@ -256,13 +256,16 @@ export default {
         liItemStyle(){
             return function(pic){
                 let rowX = parseInt(this.portfolioWidth/this.imgBoxWidth)
+                if(rowX>=this.portfolioListNumber){
+                    rowX = this.portfolioListNumber
+                }
                 let marginX = (this.portfolioWidth-rowX*this.imgBoxWidth)/rowX/2
                 let boxWidth = (this.imgBoxWidth + marginX*2)
                 let lefX = 0
                 let topY = 0
                 topY = parseInt(pic/rowX)*230
                 lefX = boxWidth*(pic%rowX)
-                return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:'+marginX+'px;'
+                return 'position: absolute; left:'+lefX+'px; top: '+topY+'px;margin:0px '+marginX+'px;'
             } 
         },
         // imgWrapperStyle(){
