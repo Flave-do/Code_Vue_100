@@ -103,7 +103,7 @@
             <div class="group-container">
                 <h2>工作经历</h2>
                 <div class="resume-group">
-                    <h3>技研新阳有限公司, 2019 - 2020</h3>
+                    <h3>XXXXXXX</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
                         nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
                         quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="resume-group">
-                    <h3>百分教育有限公司, 2020 - 2021</h3>
+                    <h3>XXXXXXXX</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
                         nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
                         quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
@@ -124,7 +124,7 @@
                         rhoncus. </p>
                 </div>
                 <div class="resume-group">
-                    <h3>安徽恒信检验检测有限公司, 2021 - NOW</h3>
+                    <h3>XXXXXXX</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat
                         nunc. Phasellus vel orci ligula. Quisque dignissim velit vel augue adipiscing
                         quis porta neque congue. Aliquam vulputate, odio sed rutrum eleifend, nisi mi
